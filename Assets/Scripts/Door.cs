@@ -2,42 +2,67 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class Door : MonoBehaviour, IInteractable
 {
     public bool isLocked = false;
     public Animator handleAnimator;
+    public Mesh glowMesh;
+    public Mesh glowMaterial;
+    public Collider doorCollider;
+
+    public int openDirection = -1;
 
     private bool m_IsOpen = false;
     private Quaternion m_InitialDoorRotation;
+    private UIGameManager m_uiGame;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_InitialDoorRotation = transform.rotation; 
+        m_InitialDoorRotation = transform.rotation;
+        m_uiGame = FindObjectOfType<UIGameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.E))
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+           
+        //}
+
+        if (m_IsOpen)
+        {
+            doorCollider.isTrigger = true;
+            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles + new Vector3(0, 90f * openDirection, 0), 0.05f);
+        }
+        else
+        {
+            doorCollider.isTrigger = false;
+            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles, 0.05f);
+        }
+    }
+
+    public void LookAt()
+    {
+        string verb = "OPEN";
+        if (m_IsOpen)
+            verb = "CLOSE";
+
+           m_uiGame.SetInteractText(verb + " Door");
+    }
+
+    public void Interact()
+    {
+        print("Interacted with " + transform.gameObject.name);
+        if (isLocked)
         {
             handleAnimator.Play("Locked");
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        else
         {
             handleAnimator.Play("Unlocked");
             m_IsOpen = !m_IsOpen;
         }
-
-        if (m_IsOpen)
-        {
-            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles + new Vector3(0, -90f, 0), 0.05f);
-        }
-        else
-        {
-            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles, 0.05f);
-        }
-
     }
 }

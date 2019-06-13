@@ -7,6 +7,8 @@ public class FirstPersonCharacterController : MonoBehaviour
     public float walkSpeed = 4.0f;
     public float runSpeed = 7.0f;
     public float sensitivity = 2f;
+    [Range(2f, 4f)]
+    public float interactReach = 3f;
     public GameObject headJoint;
     public Transform target;
 
@@ -19,6 +21,8 @@ public class FirstPersonCharacterController : MonoBehaviour
     float rotX;
     float rotY;
 
+    private UIGameManager m_uiGame;
+
     void Start()
     {
         // Turn off the cursor
@@ -27,11 +31,14 @@ public class FirstPersonCharacterController : MonoBehaviour
         //cam.SetReplacementShader(shader, "RenderType");
         //player = GetComponent<CharacterController>();
 
+        m_uiGame = FindObjectOfType<UIGameManager>();
+
         // TODO Freeze Rigidbody's X and Z rotation from code.
     }
 
     void Update()
     {
+        #region Movement
         float finalSpeed = walkSpeed;
         if (Input.GetButton("Run")) { finalSpeed = runSpeed; }
 
@@ -73,7 +80,34 @@ public class FirstPersonCharacterController : MonoBehaviour
         //var desiredMoveDirection = new Vector3(moveX, 0, moveY);
         //desiredMoveDirection.z *= moveLR;
 
-        transform.Translate(desiredMoveDirection * Time.deltaTime);
+        this.GetComponent<Rigidbody>().MovePosition(transform.position + (desiredMoveDirection * Time.deltaTime));
+
+        #endregion
+
+        #region Raycasting for Interaction
+        // Raycasting for interaction
+        m_uiGame.SetInteractText("");
+
+        RaycastHit hit;
+        int layerMask = 1 << gameObject.layer;
+        layerMask = ~layerMask;
+        print(layerMask);
+        bool didHit = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactReach, layerMask, QueryTriggerInteraction.Collide);
+        if (didHit)
+        {
+            IInteractable interacted = hit.transform.root.gameObject.GetComponent<IInteractable>();
+            if (interacted != null)
+            {
+                interacted.LookAt();
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    interacted.Interact();
+                }
+            }
+        }
+        
+        #endregion
 
 
         //target = null;

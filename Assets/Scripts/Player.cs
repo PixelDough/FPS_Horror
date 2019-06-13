@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        
+        
 
         Collider[] overlap = Physics.OverlapSphere(transform.position, 5f);
         foreach (Collider c in overlap)
@@ -37,4 +39,6 @@ public class Player : MonoBehaviour
         }
         camera.GetComponent<Cinemachine.CinemachineBrain>().ActiveVirtualCamera.LookAt = gameObject.transform;
     }
+
+    
 }
