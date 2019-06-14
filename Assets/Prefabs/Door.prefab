@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7557c3a319ee8934c951f45eb2ebe5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  verb: 2
+  item: 0
+  itemName: Door
   isLocked: 0
   handleAnimator: {fileID: 3501110079924302095}
   glowMesh: {fileID: 0}
@@ -117,6 +120,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ModelHandle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006969144220274283, guid: feedddec02112c048a57b14e6078472b,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006969144220274283, guid: feedddec02112c048a57b14e6078472b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: feedddec02112c048a57b14e6078472b,
         type: 3}
@@ -202,16 +215,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.00000010961128
-      objectReference: {fileID: 0}
-    - target: {fileID: 8006969144220274283, guid: feedddec02112c048a57b14e6078472b,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8006969144220274283, guid: feedddec02112c048a57b14e6078472b,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5767974960422501358, guid: feedddec02112c048a57b14e6078472b,
         type: 3}

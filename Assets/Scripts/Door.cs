@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour, IInteractable
+public class Door : Interactive
 {
     public bool isLocked = false;
     public Animator handleAnimator;
@@ -17,15 +17,17 @@ public class Door : MonoBehaviour, IInteractable
     private UIGameManager m_uiGame;
 
     // Start is called before the first frame update
-    void Start()
+    override public void Start()
     {
+        base.Start();
         m_InitialDoorRotation = transform.rotation;
         m_uiGame = FindObjectOfType<UIGameManager>();
     }
 
     // Update is called once per frame
-    void Update()
+    override public void Update()
     {
+        base.Update();
         //if (Input.GetKeyDown(KeyCode.E))
         //{
            
@@ -43,8 +45,10 @@ public class Door : MonoBehaviour, IInteractable
         }
     }
 
-    public void LookAt()
+    override public void LookAt()
     {
+        base.LookAt();
+
         string verb = "OPEN";
         if (m_IsOpen)
             verb = "CLOSE";
@@ -52,8 +56,10 @@ public class Door : MonoBehaviour, IInteractable
            m_uiGame.SetInteractText(verb + " Door");
     }
 
-    public void Interact()
+    override public void Interact()
     {
+        base.Interact();
+
         print("Interacted with " + transform.gameObject.name);
         if (isLocked)
         {

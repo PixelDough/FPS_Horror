@@ -17,34 +17,48 @@ public class Interactive : MonoBehaviour, IInteractable
         TAPE,
         KEYCARD
     }
+    
 
     public Verbs verb = Verbs.NONE;
     public Items item = Items.NONE;
     public string itemName = "???";
 
     private UIGameManager uiGame;
-    
+
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         uiGame = FindObjectOfType<UIGameManager>();
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         
     }
 
-    public void LookAt()
+    virtual public void LookAt()
     {
+        //uiGame = FindObjectOfType<UIGameManager>();
         uiGame.SetInteractText(verb + " " + itemName);
     }
 
-    public void Interact()
+    virtual public void Interact()
     {
         print(verb + " " + itemName);
-        
+
+        switch (verb)
+        {
+            case Verbs.GET:
+                GetItem();
+                break;
+        }
+    }
+
+    public Items GetItem()
+    {
+        Destroy(this.gameObject, 0.01f);
+        return item;
     }
 }

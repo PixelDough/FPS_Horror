@@ -319,6 +319,7 @@ MonoBehaviour:
   walkSpeed: 4
   runSpeed: 7
   sensitivity: 2
+  interactReach: 3
   headJoint: {fileID: 1565037610986364108}
   target: {fileID: 0}
   cam: {fileID: 3909595873261722146}

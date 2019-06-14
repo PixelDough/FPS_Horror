@@ -15,6 +15,8 @@ public class FirstPersonCharacterController : MonoBehaviour
     public Camera cam;
     public Light flashlight;
 
+    public List<Interactive.Items> items;
+
     float moveFB;
     float moveLR;
 
@@ -22,6 +24,8 @@ public class FirstPersonCharacterController : MonoBehaviour
     float rotY;
 
     private UIGameManager m_uiGame;
+
+    private Interactive.Items item;
 
     void Start()
     {
@@ -91,11 +95,12 @@ public class FirstPersonCharacterController : MonoBehaviour
         RaycastHit hit;
         int layerMask = 1 << gameObject.layer;
         layerMask = ~layerMask;
-        print(layerMask);
+        //print(layerMask);
+        
         bool didHit = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactReach, layerMask, QueryTriggerInteraction.Collide);
         if (didHit)
         {
-            IInteractable interacted = hit.transform.root.gameObject.GetComponent<IInteractable>();
+            var interacted = hit.transform.root.gameObject.GetComponent(typeof(Interactive)) as Interactive;
             if (interacted != null)
             {
                 interacted.LookAt();
@@ -103,6 +108,10 @@ public class FirstPersonCharacterController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     interacted.Interact();
+                    if (interacted.verb == Interactive.Verbs.GET)
+                    {
+                        items.Add(interacted.GetItem());
+                    }
                 }
             }
         }

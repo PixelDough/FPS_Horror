@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   verb: 1
-  item: 1
+  item: 2
   itemName: Key Card (Yellow)
 --- !u!1 &1356780764948360544
 GameObject:
