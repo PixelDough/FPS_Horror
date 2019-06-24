@@ -316,9 +316,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f573bdbb54fe2fe40b0406ab0670e975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 4
-  runSpeed: 7
-  sensitivity: 2
+  walkSpeed: 150
+  runSpeed: 300
+  sensitivity: 75
   interactReach: 3
   headJoint: {fileID: 1565037610986364108}
   target: {fileID: 0}

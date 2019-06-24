@@ -23,6 +23,8 @@ public class FirstPersonCharacterController : MonoBehaviour
     float rotX;
     float rotY;
 
+    float ySpeed = 0f;
+
     private UIGameManager m_uiGame;
 
     private Interactive.Items item;
@@ -69,11 +71,30 @@ public class FirstPersonCharacterController : MonoBehaviour
         //var desiredMoveDirection = new Vector3(moveX, 0, moveY);
         //desiredMoveDirection.z *= moveLR;
 
-        this.GetComponent<Rigidbody>().MovePosition(transform.position + (desiredMoveDirection * Time.deltaTime));
 
+        //this.GetComponent<Rigidbody>().MovePosition(transform.position + (desiredMoveDirection * Time.deltaTime));
+
+
+        if (!this.GetComponent<CharacterController>())
+        {
+            this.GetComponent<Rigidbody>().MovePosition(transform.position + (desiredMoveDirection * Time.deltaTime));
+        }
+        else
+        {
+            if (GetComponent<CharacterController>().isGrounded)
+            {
+                ySpeed = 0f;
+            }
+            else
+            {
+                ySpeed -= 100 * Time.deltaTime;
+                desiredMoveDirection.y += ySpeed;
+            }
+            this.GetComponent<CharacterController>().Move((desiredMoveDirection * Time.deltaTime));
+        }
         #endregion
 
-        
+
 
     }
     private void Update()
