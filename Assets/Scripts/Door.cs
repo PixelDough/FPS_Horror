@@ -30,18 +30,20 @@ public class Door : Interactive
         base.Update();
         //if (Input.GetKeyDown(KeyCode.E))
         //{
-           
+
         //}
+
+        float speed = 10f;
 
         if (m_IsOpen)
         {
             doorCollider.isTrigger = true;
-            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles + new Vector3(0, 90f * openDirection, 0), 0.05f);
+            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles + new Vector3(0, 90f * openDirection, 0), speed * Time.deltaTime);
         }
         else
         {
             doorCollider.isTrigger = false;
-            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles, 0.05f);
+            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles, speed * Time.deltaTime);
         }
     }
 

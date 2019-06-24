@@ -22,7 +22,7 @@ public class PowerSwitch : Interactive
     {
         base.Update();
         float dir = (isOn == true) ? 1f : 0f;
-        lever.transform.rotation = Quaternion.Lerp(lever.transform.rotation, Quaternion.Euler(m_InitialLeverRotation.x + (180f * dir), lever.transform.rotation.eulerAngles.y, lever.transform.rotation.eulerAngles.z), 0.2f);
+        lever.transform.rotation = Quaternion.Lerp(lever.transform.rotation, Quaternion.Euler(m_InitialLeverRotation.x + (180f * dir), lever.transform.rotation.eulerAngles.y, lever.transform.rotation.eulerAngles.z), 10f * Time.deltaTime);
         //print(m_InitialLeverRotation.eulerAngles.x + (180f * dir));
     }
 

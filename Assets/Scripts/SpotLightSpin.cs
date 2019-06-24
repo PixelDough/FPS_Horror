@@ -5,8 +5,6 @@ using UnityEngine;
 public class SpotLightSpin : MonoBehaviour
 {
     public GameObject lightRotator;
-    float startRange;
-    float time = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +14,7 @@ public class SpotLightSpin : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         lightRotator.transform.Rotate(0, 0, 3);
     }

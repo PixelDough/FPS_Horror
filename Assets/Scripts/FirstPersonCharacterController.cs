@@ -40,35 +40,20 @@ public class FirstPersonCharacterController : MonoBehaviour
         // TODO Freeze Rigidbody's X and Z rotation from code.
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         #region Movement
         float finalSpeed = walkSpeed;
         if (Input.GetButton("Run")) { finalSpeed = runSpeed; }
 
-        moveFB = Input.GetAxis("Vertical") * finalSpeed;
-        moveLR = Input.GetAxis("Horizontal") * finalSpeed;
+        moveFB = Input.GetAxis("Vertical") * finalSpeed * Time.deltaTime;
+        moveLR = Input.GetAxis("Horizontal") * finalSpeed * Time.deltaTime;
 
-        rotX = Input.GetAxis("Mouse X") * sensitivity;
-        rotY -= Input.GetAxis("Mouse Y") * sensitivity;
-        rotY = Mathf.Clamp(rotY, -80f, 80f);
+        
 
         Vector3 movement = new Vector3(moveLR, 0, moveFB);
 
-        if (!target)
-        {
-            headJoint.transform.Rotate(0, rotX, 0);
-
-            cam.transform.localRotation = Quaternion.Lerp(cam.transform.localRotation, Quaternion.Euler(rotY, 0, 0), 0.5f);
-        }
-        else
-        {
-            headJoint.transform.LookAt(target);
-            cam.transform.LookAt(target);
-        }
-
-        flashlight.transform.rotation = Quaternion.Lerp(flashlight.transform.rotation, cam.transform.rotation, 0.25f);
-
+        
         var forward = headJoint.transform.forward;
         var right = headJoint.transform.right;
         forward.y = 0f;
@@ -88,6 +73,32 @@ public class FirstPersonCharacterController : MonoBehaviour
 
         #endregion
 
+        
+
+    }
+    private void Update()
+    {
+        #region Camera
+        rotX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+        rotY -= Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+        rotY = Mathf.Clamp(rotY, -80f, 80f);
+
+        if (!target)
+        {
+            headJoint.transform.Rotate(0, rotX, 0);
+
+            cam.transform.localRotation = Quaternion.Lerp(cam.transform.localRotation, Quaternion.Euler(rotY, 0, 0), 0.5f);
+        }
+        else
+        {
+            headJoint.transform.LookAt(target);
+            cam.transform.LookAt(target);
+        }
+
+        flashlight.transform.rotation = Quaternion.Lerp(flashlight.transform.rotation, cam.transform.rotation, 0.05f);
+        
+        #endregion
+
         #region Raycasting for Interaction
         // Raycasting for interaction
         m_uiGame.SetInteractText("");
@@ -100,7 +111,7 @@ public class FirstPersonCharacterController : MonoBehaviour
         bool didHit = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactReach, layerMask, QueryTriggerInteraction.Collide);
         if (didHit)
         {
-            var interacted = hit.transform.root.gameObject.GetComponent(typeof(Interactive)) as Interactive;
+            var interacted = hit.transform.gameObject.GetComponent(typeof(Interactive)) as Interactive;
             if (interacted != null)
             {
                 interacted.LookAt();

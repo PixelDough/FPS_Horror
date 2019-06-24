@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8384858476568587502}
   - component: {fileID: 1456081804293279275}
   - component: {fileID: 4531047297542692333}
+  - component: {fileID: 2458532817482432505}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -70,6 +71,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 1, y: 1.5, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &2458532817482432505
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7163102877780439572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 3, z: 0.5}
+  m_Center: {x: 1, y: 1.5, z: 0}
 --- !u!95 &3501110079924302095
 Animator:
   serializedVersion: 3
@@ -224,7 +238,7 @@ PrefabInstance:
     - target: {fileID: 5767974960422501358, guid: feedddec02112c048a57b14e6078472b,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6046539944170520342, guid: feedddec02112c048a57b14e6078472b,
         type: 3}
@@ -239,7 +253,7 @@ PrefabInstance:
     - target: {fileID: -8733040240986845777, guid: feedddec02112c048a57b14e6078472b,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -113181020801827196, guid: feedddec02112c048a57b14e6078472b,
         type: 3}
