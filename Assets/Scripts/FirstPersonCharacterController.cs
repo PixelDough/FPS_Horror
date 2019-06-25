@@ -93,9 +93,7 @@ public class FirstPersonCharacterController : MonoBehaviour
             this.GetComponent<CharacterController>().Move((desiredMoveDirection * Time.deltaTime));
         }
         #endregion
-
-
-
+        
     }
     private void Update()
     {
@@ -121,14 +119,18 @@ public class FirstPersonCharacterController : MonoBehaviour
         #endregion
 
         #region Raycasting for Interaction
+
         // Raycasting for interaction
         m_uiGame.SetInteractText("");
 
         RaycastHit hit;
         int layerMask = 1 << gameObject.layer;
+        layerMask = LayerMask.NameToLayer("Interactable");
         layerMask = ~layerMask;
-        //print(layerMask);
+
         
+        //print(layerMask);
+
         bool didHit = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactReach, layerMask, QueryTriggerInteraction.Collide);
         if (didHit)
         {

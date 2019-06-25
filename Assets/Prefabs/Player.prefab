@@ -318,7 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 150
   runSpeed: 300
-  sensitivity: 75
+  sensitivity: 200
   interactReach: 3
   headJoint: {fileID: 1565037610986364108}
   target: {fileID: 0}
