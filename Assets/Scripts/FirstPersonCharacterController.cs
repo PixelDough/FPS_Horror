@@ -16,6 +16,7 @@ public class FirstPersonCharacterController : MonoBehaviour
     public Light flashlight;
 
     public List<Interactive.Items> items;
+    
 
     float moveFB;
     float moveLR;
@@ -98,6 +99,7 @@ public class FirstPersonCharacterController : MonoBehaviour
     private void Update()
     {
         #region Camera
+
         rotX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         rotY -= Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
         rotY = Mathf.Clamp(rotY, -80f, 80f);
@@ -169,6 +171,11 @@ public class FirstPersonCharacterController : MonoBehaviour
         {
             // Turn on the cursor
             Cursor.lockState = CursorLockMode.None;
+        }
+        if (Input.GetKeyDown("f"))
+        {
+            // Toggle the flashlight
+            flashlight.enabled = !flashlight.enabled;
         }
     }
 }

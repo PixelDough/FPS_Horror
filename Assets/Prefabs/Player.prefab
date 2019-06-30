@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 3909595873261722149}
   - component: {fileID: 3909595873261722146}
   - component: {fileID: 3909595873261722147}
-  - component: {fileID: 8650714090357241778}
   - component: {fileID: 5685858990776914430}
+  - component: {fileID: 1678426380782723610}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -117,7 +117,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3909595873261722144}
   m_Enabled: 1
---- !u!114 &8650714090357241778
+--- !u!114 &5685858990776914430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3909595873261722144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb00f7f31e68e844c85f7fd1b90945df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobbingSpeed: 0.25
+  bobbingAmount: 0.1
+  midpoint: 0
+--- !u!114 &1678426380782723610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,10 +147,10 @@ MonoBehaviour:
   volumeTrigger: {fileID: 3909595873261722149}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 1
-  antialiasingMode: 1
+  antialiasingMode: 0
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -144,8 +159,8 @@ MonoBehaviour:
   subpixelMorphologicalAntialiasing:
     quality: 2
   fastApproximateAntialiasing:
-    fastMode: 1
-    keepAlpha: 1
+    fastMode: 0
+    keepAlpha: 0
   fog:
     enabled: 1
     excludeSkybox: 1
@@ -177,21 +192,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &5685858990776914430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3909595873261722144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb00f7f31e68e844c85f7fd1b90945df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bobbingSpeed: 0.25
-  bobbingAmount: 0.1
-  midpoint: 0
 --- !u!1 &4706222510780767456
 GameObject:
   m_ObjectHideFlags: 0

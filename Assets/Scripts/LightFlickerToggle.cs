@@ -7,18 +7,28 @@ public class LightFlickerToggle : MonoBehaviour
     public bool targetState;
     public Light lightToEffect;
     public TriggerVolume triggerVolume;
+    public AudioClip audioClip;
     public bool autoReset = false;
 
     bool m_IsActive = false;
     float m_flickerTime = 1f;
-    
+
+    AudioManager audioManager;
+
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        if (triggerVolume.isTriggered)
+        if (triggerVolume.isTriggered && !m_IsActive)
         {
             m_IsActive = true;
+
+            if (audioClip) audioManager.PlaySound(audioClip);
         }
 
         if (m_IsActive)

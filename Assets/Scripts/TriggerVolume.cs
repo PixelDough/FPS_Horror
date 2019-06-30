@@ -11,7 +11,7 @@ public class TriggerVolume : MonoBehaviour
 
     private void Update()
     {
-        if (targetObject == null)
+        if (targetObject == null || !targetObject.activeInHierarchy)
         {
             isTriggered = (toggleWhenInside ? false : true);
         }
@@ -19,30 +19,36 @@ public class TriggerVolume : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == targetObject.name)
+        if (targetObject != null)
         {
-            if (toggleWhenInside)
+            if (other.name == targetObject.name)
             {
-                isTriggered = true;
-            }
-            else
-            {
-                isTriggered = false;
+                if (toggleWhenInside)
+                {
+                    isTriggered = true;
+                }
+                else
+                {
+                    isTriggered = false;
+                }
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.name == targetObject.name)
+        if (targetObject != null)
         {
-            if (!toggleWhenInside)
+            if (other.name == targetObject.name)
             {
-                isTriggered = true;
-            }
-            else
-            {
-                isTriggered = false;
+                if (!toggleWhenInside)
+                {
+                    isTriggered = true;
+                }
+                else
+                {
+                    isTriggered = false;
+                }
             }
         }
     }

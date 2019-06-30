@@ -6,6 +6,12 @@ using UnityEngine.UI;
 public class UIGameManager : MonoBehaviour
 {
     public Text interactText;
+    public CanvasGroup subtitlesText;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +23,44 @@ public class UIGameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetSubtitlesText(string text)
+    {
+        Text textComponent = subtitlesText.GetComponentInChildren(typeof(Text)).GetComponent<Text>();
+        textComponent.text = "";
+        if (text != null)
+        {
+            
+            textComponent.text = text;
+        }
+    }
+
+    public void SetSubtitlesVisibility(bool isVisible)
+    {
+        if (isVisible)
+        {
+            subtitlesText.GetComponent<Animator>().Play("FadeInUI");
+        }
+        else
+        {
+            subtitlesText.GetComponent<Animator>().Play("FadeOutUI");
+        }
+    }
+
+    public void PlaySubtitles(float delayTime, float textLengthTime)
+    {
+        StartCoroutine(SetSubtitlesFade(delayTime, textLengthTime));
+    }
+
+    private IEnumerator SetSubtitlesFade(float delayTime, float textLengthTime)
+    {
+
+        yield return new WaitForSeconds(delayTime);
+        SetSubtitlesVisibility(true);
+        yield return new WaitForSeconds(textLengthTime);
+        SetSubtitlesVisibility(false);
+
     }
 
     public void SetInteractText(string text)

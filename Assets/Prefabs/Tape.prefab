@@ -144,7 +144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3144949755326836164}
-  - component: {fileID: 6965708621522173761}
+  - component: {fileID: 4383638077347601823}
   - component: {fileID: 5909995613632787364}
   m_Layer: 9
   m_Name: Tape
@@ -170,7 +170,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6965708621522173761
+--- !u!114 &4383638077347601823
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,12 +179,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2389176050620437027}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca42d3223c13f074da4b830f3d6ba85b, type: 3}
+  m_Script: {fileID: 11500000, guid: eaaaf1865a2db224aa05f4da7eb0e4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   verb: 1
   item: 1
-  itemName: Tape
+  itemName: 'Tape #1'
+  tapeOpenEffectSound: {fileID: 8300000, guid: 83e7e0e9af1a0da4486753af9ac47c6f, type: 3}
+  tapeCloseEffectSound: {fileID: 8300000, guid: 46bea510601c0f6488fbaf024553b3e7,
+    type: 3}
+  audioClip: {fileID: 8300000, guid: 72a05a91ae0606140b097efc142686bb, type: 3}
+  transcription: "We got the call the other day from HQ saying we were to shut down
+    all power in the case of an emergency. Most of us just shrugged it off, but...
+    I\u2019m starting to wonder what kind of an emergency would require something
+    so drastic?"
 --- !u!135 &5909995613632787364
 SphereCollider:
   m_ObjectHideFlags: 0

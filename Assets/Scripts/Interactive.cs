@@ -58,7 +58,8 @@ public class Interactive : MonoBehaviour, IInteractable
 
     public Items GetItem()
     {
-        Destroy(this.gameObject, 0.01f);
+        this.gameObject.SetActive(false);
+        //Destroy(this.gameObject, 0.01f);
         return item;
     }
 }
