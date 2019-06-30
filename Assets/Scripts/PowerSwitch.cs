@@ -15,7 +15,7 @@ public class PowerSwitch : Interactive
         base.Start();
         m_InitialLeverRotation = lever.transform.rotation.eulerAngles;
 
-        lights.SetActive(isOn);
+        SetLights(isOn);
     }
 
     public override void Update()
@@ -39,6 +39,16 @@ public class PowerSwitch : Interactive
 
         //print("Interacted with " + transform.gameObject.name);
         isOn = !isOn;
-        lights.SetActive(isOn);
+        //lights.SetActive(isOn);
+        SetLights(isOn);
+    }
+
+    private void SetLights(bool isOn)
+    {
+        Light[] lightComponents = lights.GetComponentsInChildren<Light>(true);
+        foreach (Light l in lightComponents)
+        {
+            l.gameObject.SetActive(isOn);
+        }
     }
 }

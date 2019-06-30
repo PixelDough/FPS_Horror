@@ -255,6 +255,12 @@ PrefabInstance:
       propertyPath: m_ScaleInLightmap
       value: 0.001
       objectReference: {fileID: 0}
+    - target: {fileID: 5767974960422501358, guid: feedddec02112c048a57b14e6078472b,
+        type: 3}
+      propertyPath: m_LightmapParameters
+      value: 
+      objectReference: {fileID: 111300000, guid: 570e15c416727c9489cefdbdc6769c21,
+        type: 2}
     - target: {fileID: 6046539944170520342, guid: feedddec02112c048a57b14e6078472b,
         type: 3}
       propertyPath: m_Enabled
@@ -270,6 +276,12 @@ PrefabInstance:
       propertyPath: m_ScaleInLightmap
       value: 0.001
       objectReference: {fileID: 0}
+    - target: {fileID: -8733040240986845777, guid: feedddec02112c048a57b14e6078472b,
+        type: 3}
+      propertyPath: m_LightmapParameters
+      value: 
+      objectReference: {fileID: 111300000, guid: 570e15c416727c9489cefdbdc6769c21,
+        type: 2}
     - target: {fileID: -113181020801827196, guid: feedddec02112c048a57b14e6078472b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

@@ -200,11 +200,38 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6399157241168359602, guid: 5cf34fb6030cd734281c0e8469765641,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603612412206971952, guid: 5cf34fb6030cd734281c0e8469765641,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603612412206971952, guid: 5cf34fb6030cd734281c0e8469765641,
+        type: 3}
+      propertyPath: m_LightmapParameters
+      value: 
+      objectReference: {fileID: 111300000, guid: 570e15c416727c9489cefdbdc6769c21,
+        type: 2}
     - target: {fileID: 998356590043849621, guid: 5cf34fb6030cd734281c0e8469765641,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7f2ab3f63c0783f468acad1c9e74296a, type: 2}
+    - target: {fileID: 998356590043849621, guid: 5cf34fb6030cd734281c0e8469765641,
+        type: 3}
+      propertyPath: m_LightmapParameters
+      value: 
+      objectReference: {fileID: 111300000, guid: 570e15c416727c9489cefdbdc6769c21,
+        type: 2}
+    - target: {fileID: 998356590043849621, guid: 5cf34fb6030cd734281c0e8469765641,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cf34fb6030cd734281c0e8469765641, type: 3}
 --- !u!4 &8136285784229681730 stripped

@@ -30,25 +30,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerWithController
       objectReference: {fileID: 0}
-    - target: {fileID: 7298112877467424960, guid: bf24d83707194204cb2e543f8c1c030e,
+    - target: {fileID: 4706222510780767456, guid: bf24d83707194204cb2e543f8c1c030e,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7095410783604930968, guid: bf24d83707194204cb2e543f8c1c030e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -96.5
       objectReference: {fileID: 0}
     - target: {fileID: 7095410783604930968, guid: bf24d83707194204cb2e543f8c1c030e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7095410783604930968, guid: bf24d83707194204cb2e543f8c1c030e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -29.5
       objectReference: {fileID: 0}
     - target: {fileID: 7095410783604930968, guid: bf24d83707194204cb2e543f8c1c030e,
         type: 3}
@@ -90,8 +90,94 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5262863788610419814, guid: bf24d83707194204cb2e543f8c1c030e, type: 3}
+    - target: {fileID: 1565037610986364108, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103711429663621430, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: -2.2734078e-22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103711429663621430, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 7.43e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103711429663621430, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -2.447778e-22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909595873261722144, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5775004500127462383, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580630199977961, guid: bf24d83707194204cb2e543f8c1c030e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314441706503945, guid: bf24d83707194204cb2e543f8c1c030e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314441706503945, guid: bf24d83707194204cb2e543f8c1c030e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718223642929865, guid: bf24d83707194204cb2e543f8c1c030e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718223642929865, guid: bf24d83707194204cb2e543f8c1c030e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223846052285655583, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098446808182571, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: resolutionVert
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098446808182571, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: limitFramerate
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098446808182571, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: skyboxLighting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098446808182571, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: useCanvas
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087133083974841, guid: bf24d83707194204cb2e543f8c1c030e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087133083974841, guid: bf24d83707194204cb2e543f8c1c030e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173603030607157, guid: bf24d83707194204cb2e543f8c1c030e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf24d83707194204cb2e543f8c1c030e, type: 3}
 --- !u!1 &5095279388348308372 stripped
 GameObject:

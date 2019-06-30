@@ -132,6 +132,11 @@ MonoBehaviour:
   bobbingSpeed: 0.25
   bobbingAmount: 0.1
   midpoint: 0
+  stepSounds:
+  - {fileID: 8300000, guid: 2a9f5bb321ae41440ad024f58a44a209, type: 3}
+  - {fileID: 8300000, guid: f5465e3cf9b4caa4cb483d46225b8060, type: 3}
+  - {fileID: 8300000, guid: 5db4f057e6ec6d242b62929f659a4973, type: 3}
+  - {fileID: 8300000, guid: c7cf5eb2ee600b84e96d8aa4a0a61133, type: 3}
 --- !u!114 &1678426380782723610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +209,6 @@ GameObject:
   - component: {fileID: 228731623386426730}
   - component: {fileID: 4991821393318560149}
   - component: {fileID: 7298112877467424960}
-  - component: {fileID: 5262863788610419814}
   - component: {fileID: 8434129043656517705}
   m_Layer: 8
   m_Name: Player
@@ -288,22 +292,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5262863788610419814
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4706222510780767456}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 2
 --- !u!114 &8434129043656517705
 MonoBehaviour:
   m_ObjectHideFlags: 0

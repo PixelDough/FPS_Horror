@@ -179,8 +179,14 @@ PrefabInstance:
     - target: {fileID: 8304545770963488453, guid: 642423b24ff8605448b41a80174c82fa,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 0.1
+      value: 0.001
       objectReference: {fileID: 0}
+    - target: {fileID: 8304545770963488453, guid: 642423b24ff8605448b41a80174c82fa,
+        type: 3}
+      propertyPath: m_LightmapParameters
+      value: 
+      objectReference: {fileID: 111300000, guid: 570e15c416727c9489cefdbdc6769c21,
+        type: 2}
     - target: {fileID: 3239273546618479178, guid: 642423b24ff8605448b41a80174c82fa,
         type: 3}
       propertyPath: m_Enabled
@@ -219,8 +225,14 @@ PrefabInstance:
     - target: {fileID: -1919434269441473061, guid: 642423b24ff8605448b41a80174c82fa,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 0.1
+      value: 0.001
       objectReference: {fileID: 0}
+    - target: {fileID: -1919434269441473061, guid: 642423b24ff8605448b41a80174c82fa,
+        type: 3}
+      propertyPath: m_LightmapParameters
+      value: 
+      objectReference: {fileID: 111300000, guid: 570e15c416727c9489cefdbdc6769c21,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 642423b24ff8605448b41a80174c82fa, type: 3}
 --- !u!4 &2388871966620230023 stripped

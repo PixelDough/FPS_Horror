@@ -7,11 +7,13 @@ public class AudioTape : Interactive
     public AudioClip tapeOpenEffectSound;
     public AudioClip tapeCloseEffectSound;
     public AudioClip audioClip;
+    public Material TVStatic;
 
     [TextArea(15, 20)]
     public string transcription;
 
     UIGameManager uiGame;
+    Material startMaterial;
 
     //AudioSource audioSource;
 
@@ -21,12 +23,27 @@ public class AudioTape : Interactive
 
         uiGame = FindObjectOfType<UIGameManager>();
 
+        startMaterial = GetComponentInChildren<MeshRenderer>().material;
+
         //audioSource = gameObject.AddComponent<AudioSource>();
+    }
+
+    public override void Update()
+    {
+        GetComponentInChildren<MeshRenderer>().material = startMaterial;
+    }
+
+    public override void LookAt()
+    {
+        base.LookAt();
+
+        //GetComponentInChildren<MeshRenderer>().material = TVStatic;
     }
 
     public override void Interact()
     {
         base.Interact();
+        
 
         uiGame.SetSubtitlesText(transcription);
         uiGame.PlaySubtitles(tapeOpenEffectSound.length, audioClip.length);

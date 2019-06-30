@@ -10,6 +10,15 @@ public class Headbob : MonoBehaviour
     public float bobbingAmount = 0.2f;
     public float midpoint = 0.0f;
 
+    public List<AudioClip> stepSounds;
+
+    AudioManager audioManager;
+
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
     void FixedUpdate()
     {
         float waveslice = 0.0f;
@@ -26,6 +35,7 @@ public class Headbob : MonoBehaviour
             if (timer > Mathf.PI * 2)
             {
                 timer = timer - (Mathf.PI * 2);
+                audioManager.PlaySoundRandom(stepSounds);
             }
         }
 

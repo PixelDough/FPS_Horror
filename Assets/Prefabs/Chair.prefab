@@ -74,6 +74,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair1
       objectReference: {fileID: 0}
+    - target: {fileID: 4565382436463193942, guid: e782b14042d4c72469e1fd4a16376f63,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693055581561565694, guid: e782b14042d4c72469e1fd4a16376f63,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151305354274270114, guid: e782b14042d4c72469e1fd4a16376f63,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e782b14042d4c72469e1fd4a16376f63,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -129,36 +144,39 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -157319374824235829, guid: e782b14042d4c72469e1fd4a16376f63,
+    - target: {fileID: 5978353756071193034, guid: e782b14042d4c72469e1fd4a16376f63,
         type: 3}
       propertyPath: m_ScaleInLightmap
       value: 0.001
       objectReference: {fileID: 0}
-    - target: {fileID: 2693055581561565694, guid: e782b14042d4c72469e1fd4a16376f63,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4565382436463193942, guid: e782b14042d4c72469e1fd4a16376f63,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5978353756071193034, guid: e782b14042d4c72469e1fd4a16376f63,
+        type: 3}
+      propertyPath: m_LightmapParameters
+      value: 
+      objectReference: {fileID: 111300000, guid: 570e15c416727c9489cefdbdc6769c21,
+        type: 2}
+    - target: {fileID: 8287463784888305903, guid: e782b14042d4c72469e1fd4a16376f63,
         type: 3}
       propertyPath: m_ScaleInLightmap
       value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 8287463784888305903, guid: e782b14042d4c72469e1fd4a16376f63,
         type: 3}
+      propertyPath: m_LightmapParameters
+      value: 
+      objectReference: {fileID: 111300000, guid: 570e15c416727c9489cefdbdc6769c21,
+        type: 2}
+    - target: {fileID: -157319374824235829, guid: e782b14042d4c72469e1fd4a16376f63,
+        type: 3}
       propertyPath: m_ScaleInLightmap
       value: 0.001
       objectReference: {fileID: 0}
-    - target: {fileID: 9151305354274270114, guid: e782b14042d4c72469e1fd4a16376f63,
+    - target: {fileID: -157319374824235829, guid: e782b14042d4c72469e1fd4a16376f63,
         type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_LightmapParameters
+      value: 
+      objectReference: {fileID: 111300000, guid: 570e15c416727c9489cefdbdc6769c21,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e782b14042d4c72469e1fd4a16376f63, type: 3}
 --- !u!4 &1686714476684345271 stripped

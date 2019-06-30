@@ -124,6 +124,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallWithDoorHole
       objectReference: {fileID: 0}
+    - target: {fileID: 2926426679950814022, guid: 91b9c138d74294d468a72de449c58aa4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812277496480490764, guid: 91b9c138d74294d468a72de449c58aa4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 91b9c138d74294d468a72de449c58aa4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -179,25 +189,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2926426679950814022, guid: 91b9c138d74294d468a72de449c58aa4,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5417555812062231569, guid: 91b9c138d74294d468a72de449c58aa4,
         type: 3}
       propertyPath: m_AutoUVMaxDistance
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417555812062231569, guid: 91b9c138d74294d468a72de449c58aa4,
+        type: 3}
+      propertyPath: m_LightmapParameters
+      value: 
+      objectReference: {fileID: 111300000, guid: 570e15c416727c9489cefdbdc6769c21,
+        type: 2}
+    - target: {fileID: 5417555812062231569, guid: 91b9c138d74294d468a72de449c58aa4,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 5734414120425621157, guid: 91b9c138d74294d468a72de449c58aa4,
         type: 3}
       propertyPath: m_AutoUVMaxDistance
       value: 0.05
       objectReference: {fileID: 0}
-    - target: {fileID: 6812277496480490764, guid: 91b9c138d74294d468a72de449c58aa4,
+    - target: {fileID: 5734414120425621157, guid: 91b9c138d74294d468a72de449c58aa4,
         type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
+      propertyPath: m_LightmapParameters
+      value: 
+      objectReference: {fileID: 111300000, guid: 570e15c416727c9489cefdbdc6769c21,
+        type: 2}
+    - target: {fileID: 5734414120425621157, guid: 91b9c138d74294d468a72de449c58aa4,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91b9c138d74294d468a72de449c58aa4, type: 3}
