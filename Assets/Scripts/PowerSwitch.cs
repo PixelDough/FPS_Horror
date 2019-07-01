@@ -10,9 +10,8 @@ public class PowerSwitch : Interactive
 
     private Vector3 m_InitialLeverRotation;
 
-    public override void Start()
+    public void Awake()
     {
-        base.Start();
         m_InitialLeverRotation = lever.transform.rotation.eulerAngles;
 
         SetLights(isOn);

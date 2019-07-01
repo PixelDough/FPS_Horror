@@ -54,6 +54,8 @@ MonoBehaviour:
   glowMesh: {fileID: 0}
   glowMaterial: {fileID: 0}
   doorCollider: {fileID: 1066308360171370649}
+  doorLockedSound: {fileID: 8300000, guid: 377bdb272b2f9b443a1cd41e5c6a7448, type: 3}
+  doorUnlockedSound: {fileID: 8300000, guid: 9c2edf382b2f2cd459c4ce0b86fb766f, type: 3}
   openDirection: -1
 --- !u!208 &4531047297542692333
 NavMeshObstacle:

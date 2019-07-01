@@ -14,6 +14,9 @@ public class FirstPersonCharacterController : MonoBehaviour
 
     public Camera cam;
     public Light flashlight;
+    public bool hasFlashlight = false;
+    public AudioClip flashlightSoundOn;
+    public AudioClip flashlightSoundOff;
 
     public List<Interactive.Items> items;
     
@@ -27,6 +30,9 @@ public class FirstPersonCharacterController : MonoBehaviour
     float ySpeed = 0f;
 
     private UIGameManager m_uiGame;
+    private AudioManager audioManager;
+
+    bool flashlightIsOn = true;
 
     private Interactive.Items item;
 
@@ -39,6 +45,7 @@ public class FirstPersonCharacterController : MonoBehaviour
         //player = GetComponent<CharacterController>();
 
         m_uiGame = FindObjectOfType<UIGameManager>();
+        audioManager = FindObjectOfType<AudioManager>();
 
         // TODO Freeze Rigidbody's X and Z rotation from code.
     }
@@ -166,16 +173,42 @@ public class FirstPersonCharacterController : MonoBehaviour
             }
         }
 
+        hasFlashlight = false;
+        // Inventory check
+        foreach (Interactive.Items i in items)
+        {
+            if(i == Interactive.Items.FLASHLIGHT)
+            {
+                hasFlashlight = true;
+            }
+        }
 
         if (Input.GetKeyDown("escape"))
         {
             // Turn on the cursor
             Cursor.lockState = CursorLockMode.None;
         }
-        if (Input.GetKeyDown("f"))
+
+        if (hasFlashlight)
         {
-            // Toggle the flashlight
-            flashlight.enabled = !flashlight.enabled;
+            if (Input.GetKeyDown("f"))
+            {
+                // Toggle the flashlight
+                flashlightIsOn = !flashlightIsOn;
+                if (flashlightIsOn)
+                {
+                    audioManager.PlaySound(flashlightSoundOn);
+                }
+                else
+                {
+                    audioManager.PlaySound(flashlightSoundOff);
+                }
+            }
+            flashlight.enabled = flashlightIsOn;
+        }
+        else
+        {
+            flashlight.enabled = false;
         }
     }
 }

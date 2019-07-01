@@ -14,6 +14,7 @@ public class Interactive : MonoBehaviour, IInteractable
     public enum Items
     {
         NONE,
+        FLASHLIGHT,
         TAPE,
         KEYCARD
     }
@@ -23,13 +24,17 @@ public class Interactive : MonoBehaviour, IInteractable
     public Items item = Items.NONE;
     public string itemName = "???";
 
+    public AudioClip pickupSound;
+
     private UIGameManager uiGame;
+    private AudioManager audioManager;
 
 
     // Start is called before the first frame update
     public virtual void Start()
     {
         uiGame = FindObjectOfType<UIGameManager>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -59,7 +64,7 @@ public class Interactive : MonoBehaviour, IInteractable
     public Items GetItem()
     {
         this.gameObject.SetActive(false);
-        //Destroy(this.gameObject, 0.01f);
+        audioManager.PlaySound(pickupSound);
         return item;
     }
 }

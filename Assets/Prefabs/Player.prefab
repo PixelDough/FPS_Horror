@@ -312,6 +312,9 @@ MonoBehaviour:
   target: {fileID: 0}
   cam: {fileID: 3909595873261722146}
   flashlight: {fileID: 8103711429663621430}
+  hasFlashlight: 0
+  flashlightSoundOn: {fileID: 8300000, guid: 00b591327adced545971b211136c49f5, type: 3}
+  flashlightSoundOff: {fileID: 8300000, guid: f7bab4f3bc5e9c346be6dc67c5f0aed1, type: 3}
   items: 
 --- !u!1 &5775004500127462383
 GameObject:

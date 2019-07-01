@@ -9,6 +9,8 @@ public class Door : Interactive
     public Mesh glowMesh;
     public Mesh glowMaterial;
     public Collider doorCollider;
+    public AudioClip doorLockedSound;
+    public AudioClip doorUnlockedSound;
 
     public int openDirection = -1;
 
@@ -16,22 +18,22 @@ public class Door : Interactive
     private Quaternion m_InitialDoorRotation;
     private UIGameManager m_uiGame;
 
+    private AudioManager audioManager;
+
     // Start is called before the first frame update
     override public void Start()
     {
         base.Start();
         m_InitialDoorRotation = transform.rotation;
         m_uiGame = FindObjectOfType<UIGameManager>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
     override public void Update()
     {
         base.Update();
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-
-        //}
+        
 
         float speed = 10f;
 
@@ -66,10 +68,12 @@ public class Door : Interactive
         if (isLocked)
         {
             handleAnimator.Play("Locked");
+            audioManager.PlaySound(doorLockedSound);
         }
         else
         {
             handleAnimator.Play("Unlocked");
+            audioManager.PlaySound(doorUnlockedSound);
             m_IsOpen = !m_IsOpen;
         }
     }
