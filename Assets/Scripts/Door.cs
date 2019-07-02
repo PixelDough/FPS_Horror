@@ -20,6 +20,8 @@ public class Door : Interactive
 
     private AudioManager audioManager;
 
+    public Items itemToUnlock;
+
     // Start is called before the first frame update
     override public void Start()
     {
@@ -40,7 +42,7 @@ public class Door : Interactive
         if (m_IsOpen)
         {
             doorCollider.isTrigger = true;
-            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles + new Vector3(0, 90f * openDirection, 0), speed * Time.deltaTime);
+            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles + new Vector3(0, 90f, 0) * openDirection, speed * Time.deltaTime);
         }
         else
         {
@@ -63,6 +65,17 @@ public class Door : Interactive
     override public void Interact()
     {
         base.Interact();
+
+        FirstPersonCharacterController player = FindObjectOfType<FirstPersonCharacterController>();
+
+        if (itemToUnlock != Items.NONE)
+        {
+            isLocked = true;
+            if (player.HasItem(itemToUnlock))
+            {
+                isLocked = false;
+            }
+        }
 
         print("Interacted with " + transform.gameObject.name);
         if (isLocked)

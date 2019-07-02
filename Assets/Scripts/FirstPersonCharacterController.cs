@@ -32,6 +32,8 @@ public class FirstPersonCharacterController : MonoBehaviour
     private UIGameManager m_uiGame;
     private AudioManager audioManager;
 
+    private Transform standingOn;
+
     bool flashlightIsOn = true;
 
     private Interactive.Items item;
@@ -89,16 +91,20 @@ public class FirstPersonCharacterController : MonoBehaviour
         }
         else
         {
+            ySpeed -= 100 * Time.deltaTime;
+            desiredMoveDirection.y += ySpeed;
+            this.GetComponent<CharacterController>().Move((desiredMoveDirection * Time.deltaTime));
             if (GetComponent<CharacterController>().isGrounded)
             {
+                print("Grounded");
                 ySpeed = 0f;
             }
             else
             {
-                ySpeed -= 100 * Time.deltaTime;
-                desiredMoveDirection.y += ySpeed;
+                print("Not grounded");
+                
             }
-            this.GetComponent<CharacterController>().Move((desiredMoveDirection * Time.deltaTime));
+            
         }
         #endregion
         
@@ -211,4 +217,22 @@ public class FirstPersonCharacterController : MonoBehaviour
             flashlight.enabled = false;
         }
     }
+
+
+    public bool HasItem(Interactive.Items item)
+    {
+
+        foreach (Interactive.Items i in items)
+        {
+            if (i == item)
+            {
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+    
+
 }

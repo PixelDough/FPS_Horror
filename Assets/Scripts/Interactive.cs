@@ -16,7 +16,8 @@ public class Interactive : MonoBehaviour, IInteractable
         NONE,
         FLASHLIGHT,
         TAPE,
-        KEYCARD
+        KEYCARD_YELLOW,
+        KEYCARD_PURPLE
     }
     
 

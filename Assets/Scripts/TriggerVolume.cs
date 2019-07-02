@@ -9,7 +9,7 @@ public class TriggerVolume : MonoBehaviour
 
     public bool isTriggered = false;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (targetObject == null || !targetObject.activeInHierarchy)
         {

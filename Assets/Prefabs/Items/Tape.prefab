@@ -184,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verb: 1
   item: 2
-  itemName: 'Tape #1'
+  itemName: Audio Tape
   pickupSound: {fileID: 8300000, guid: 33d246718618a914fbab6c4d70fa60be, type: 3}
   tapeOpenEffectSound: {fileID: 8300000, guid: 83e7e0e9af1a0da4486753af9ac47c6f, type: 3}
   tapeCloseEffectSound: {fileID: 8300000, guid: 46bea510601c0f6488fbaf024553b3e7,

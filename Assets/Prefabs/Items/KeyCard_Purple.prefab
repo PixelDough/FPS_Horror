@@ -72,6 +72,11 @@ PrefabInstance:
       propertyPath: itemName
       value: Key Card (Purple)
       objectReference: {fileID: 0}
+    - target: {fileID: 8944005090269665126, guid: 57e48e201b494524a9f950bb9b5b7b18,
+        type: 3}
+      propertyPath: item
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3142718596499383400, guid: 57e48e201b494524a9f950bb9b5b7b18,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
