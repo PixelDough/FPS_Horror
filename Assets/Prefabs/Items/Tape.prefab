@@ -215,21 +215,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3144949755326836164}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 4de81f9b2397e0542ac5ad6ddc5ed6b0,
-        type: 3}
-      propertyPath: m_Name
-      value: Tape
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 4de81f9b2397e0542ac5ad6ddc5ed6b0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 4de81f9b2397e0542ac5ad6ddc5ed6b0,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4de81f9b2397e0542ac5ad6ddc5ed6b0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -284,6 +269,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4de81f9b2397e0542ac5ad6ddc5ed6b0,
+        type: 3}
+      propertyPath: m_Name
+      value: Tape
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4de81f9b2397e0542ac5ad6ddc5ed6b0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4de81f9b2397e0542ac5ad6ddc5ed6b0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 4de81f9b2397e0542ac5ad6ddc5ed6b0,
         type: 3}

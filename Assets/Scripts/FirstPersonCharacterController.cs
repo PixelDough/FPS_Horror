@@ -138,28 +138,29 @@ public class FirstPersonCharacterController : MonoBehaviour
         // Raycasting for interaction
         m_uiGame.SetInteractText("");
 
-        RaycastHit hit;
+        RaycastHit[] allHits;
         int layerMask = 1 << gameObject.layer;
         layerMask = LayerMask.NameToLayer("Interactable");
         layerMask = ~layerMask;
 
-        
-        //print(layerMask);
+        allHits = Physics.RaycastAll(Camera.main.transform.position, Camera.main.transform.forward, interactReach, layerMask, QueryTriggerInteraction.Collide);
 
-        bool didHit = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactReach, layerMask, QueryTriggerInteraction.Collide);
-        if (didHit)
+        foreach (var hit in allHits)
         {
-            var interacted = hit.transform.gameObject.GetComponent(typeof(Interactive)) as Interactive;
-            if (interacted != null)
+            if (hit.transform.gameObject.layer != layerMask)
             {
-                interacted.LookAt();
-
-                if (Input.GetKeyDown(KeyCode.E))
+                var interacted = hit.transform.gameObject.GetComponent(typeof(Interactive)) as Interactive;
+                if (interacted != null)
                 {
-                    interacted.Interact();
-                    if (interacted.verb == Interactive.Verbs.GET)
+                    interacted.LookAt();
+
+                    if (Input.GetKeyDown(KeyCode.E))
                     {
-                        items.Add(interacted.GetItem());
+                        interacted.Interact();
+                        if (interacted.verb == Interactive.Verbs.GET)
+                        {
+                            items.Add(interacted.GetItem());
+                        }
                     }
                 }
             }
@@ -175,7 +176,7 @@ public class FirstPersonCharacterController : MonoBehaviour
             if (c.gameObject.GetComponent<Monster_TV>())
             {
                 c.gameObject.GetComponent<Monster_TV>().alive = true;
-                target = c.transform;
+                target = c.GetComponent<Monster_TV>().screenTransform;
             }
         }
 

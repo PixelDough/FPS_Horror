@@ -11,8 +11,9 @@ public class TriggerVolume : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (targetObject == null || !targetObject.activeInHierarchy)
+        if (targetObject == null || !targetObject.activeSelf)
         {
+            print(name + ": " + targetObject.name + " is null or inactive.");
             isTriggered = (toggleWhenInside ? false : true);
         }
     }
@@ -21,7 +22,7 @@ public class TriggerVolume : MonoBehaviour
     {
         if (targetObject != null)
         {
-            if (other.name == targetObject.name)
+            if (other.gameObject == targetObject)
             {
                 if (toggleWhenInside)
                 {
@@ -39,7 +40,7 @@ public class TriggerVolume : MonoBehaviour
     {
         if (targetObject != null)
         {
-            if (other.name == targetObject.name)
+            if (other.gameObject == targetObject)
             {
                 if (!toggleWhenInside)
                 {

@@ -7,6 +7,7 @@ public class Monster_TV : MonoBehaviour
 {
     public bool alive = false;
     public GameObject lights;
+    public Transform screenTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,9 @@ public class Monster_TV : MonoBehaviour
     {
         if (alive)
         {
-            lights.SetActive(true);
             GetComponent<NavMeshAgent>().destination = FindObjectOfType<FirstPersonCharacterController>().gameObject.transform.position;
             GetComponent<NavMeshAgent>().speed = 3f;
+            lights.SetActive(true);
         }
     }
 }
