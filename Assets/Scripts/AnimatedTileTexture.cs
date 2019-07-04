@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//[ExecuteInEditMode]
 public class AnimatedTileTexture : MonoBehaviour
 {
     public float animationCycleTime;
@@ -94,11 +95,11 @@ public class AnimatedTileTexture : MonoBehaviour
     }
     protected virtual void ApplyOffset(Vector2 offset)
     {
-        animatedRenderer.material.mainTextureOffset = offset;
+        animatedRenderer.sharedMaterial.mainTextureOffset = offset;
     }
     protected virtual void ApplyScale(Vector2 scale)
     {
-        animatedRenderer.material.mainTextureScale = scale;
+        animatedRenderer.sharedMaterial.mainTextureScale = scale;
     }
 
 

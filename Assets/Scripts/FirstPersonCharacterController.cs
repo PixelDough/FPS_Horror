@@ -42,6 +42,7 @@ public class FirstPersonCharacterController : MonoBehaviour
     {
         // Turn off the cursor
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         //cam.SetReplacementShader(shader, "RenderType");
         //player = GetComponent<CharacterController>();
@@ -107,9 +108,12 @@ public class FirstPersonCharacterController : MonoBehaviour
             
         }
         #endregion
+
         
+
     }
-    private void Update()
+
+    private void LateUpdate()
     {
         #region Camera
 
@@ -129,9 +133,14 @@ public class FirstPersonCharacterController : MonoBehaviour
             cam.transform.LookAt(target);
         }
 
-        flashlight.transform.rotation = Quaternion.Lerp(flashlight.transform.rotation, cam.transform.rotation, 0.05f);
-        
+        flashlight.transform.rotation = Quaternion.Lerp(flashlight.transform.rotation, cam.transform.rotation, 0.1f);
+
         #endregion
+    }
+
+    private void Update()
+    {
+        
 
         #region Raycasting for Interaction
 
