@@ -216,7 +216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7095410783604930968
 Transform:
   m_ObjectHideFlags: 0
@@ -256,6 +256,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -267,6 +268,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -300,7 +302,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4706222510780767456}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f573bdbb54fe2fe40b0406ab0670e975, type: 3}
   m_Name: 
@@ -474,18 +476,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3909595873261722149}
     m_Modifications:
-    - target: {fileID: 1580631149838664, guid: d28e9d86a4287b145a5c702a4a71ee76, type: 3}
-      propertyPath: m_Name
-      value: PSXEffects
-      objectReference: {fileID: 0}
-    - target: {fileID: 1580631149838664, guid: d28e9d86a4287b145a5c702a4a71ee76, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1580631149838664, guid: d28e9d86a4287b145a5c702a4a71ee76, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4152662655006104, guid: d28e9d86a4287b145a5c702a4a71ee76, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -529,6 +519,18 @@ PrefabInstance:
     - target: {fileID: 4152662655006104, guid: d28e9d86a4287b145a5c702a4a71ee76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580631149838664, guid: d28e9d86a4287b145a5c702a4a71ee76, type: 3}
+      propertyPath: m_Name
+      value: PSXEffects
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580631149838664, guid: d28e9d86a4287b145a5c702a4a71ee76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580631149838664, guid: d28e9d86a4287b145a5c702a4a71ee76, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1314441276438952, guid: d28e9d86a4287b145a5c702a4a71ee76, type: 3}
       propertyPath: m_IsActive

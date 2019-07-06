@@ -58,6 +58,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -69,6 +70,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 0.001
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -704,7 +706,7 @@ Light:
   m_InnerSpotAngle: 9
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -737,7 +739,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -754,16 +756,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2978698705181736857}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: ca26d2cf523dfa84980f2ebc323097c4,
-        type: 3}
-      propertyPath: m_Name
-      value: ConeLight (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: ca26d2cf523dfa84980f2ebc323097c4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ca26d2cf523dfa84980f2ebc323097c4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -833,6 +825,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ca26d2cf523dfa84980f2ebc323097c4,
+        type: 3}
+      propertyPath: m_Name
+      value: ConeLight (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ca26d2cf523dfa84980f2ebc323097c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ca26d2cf523dfa84980f2ebc323097c4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5178661895559278292, guid: ca26d2cf523dfa84980f2ebc323097c4,
         type: 3}
@@ -870,11 +877,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2978698705181736857}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: ca26d2cf523dfa84980f2ebc323097c4,
-        type: 3}
-      propertyPath: m_Name
-      value: ConeLight
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ca26d2cf523dfa84980f2ebc323097c4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -944,6 +946,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ca26d2cf523dfa84980f2ebc323097c4,
+        type: 3}
+      propertyPath: m_Name
+      value: ConeLight
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ca26d2cf523dfa84980f2ebc323097c4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: ca26d2cf523dfa84980f2ebc323097c4,
         type: 3}

@@ -140,7 +140,7 @@ public class FirstPersonCharacterController : MonoBehaviour
 
     private void Update()
     {
-        
+        if (PauseManager.isPaused) { return; }
 
         #region Raycasting for Interaction
 

@@ -43,7 +43,6 @@ public class AudioTape : Interactive
     public override void Interact()
     {
         base.Interact();
-        
 
         uiGame.SetSubtitlesText(transcription);
         uiGame.PlaySubtitles(tapeOpenEffectSound.length, audioClip.length);

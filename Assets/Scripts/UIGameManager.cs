@@ -13,18 +13,6 @@ public class UIGameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetSubtitlesText(string text)
     {
         Text textComponent = subtitlesText.GetComponentInChildren(typeof(Text)).GetComponent<Text>();
