@@ -12,11 +12,10 @@ public class Headbob : MonoBehaviour
 
     public List<AudioClip> stepSounds;
 
-    AudioManager audioManager;
 
     private void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
+
     }
 
     void FixedUpdate()
@@ -35,7 +34,7 @@ public class Headbob : MonoBehaviour
             if (timer > Mathf.PI * 2)
             {
                 timer = timer - (Mathf.PI * 2);
-                audioManager.PlaySoundRandom(stepSounds);
+                AudioManager.PlaySoundRandom(stepSounds);
             }
         }
 

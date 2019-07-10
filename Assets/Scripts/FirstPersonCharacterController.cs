@@ -117,8 +117,8 @@ public class FirstPersonCharacterController : MonoBehaviour
     {
         #region Camera
 
-        rotX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-        rotY -= Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+        rotX = Input.GetAxis("Mouse X") * GameManager.Instance.lookSensitivity * Time.deltaTime;
+        rotY -= Input.GetAxis("Mouse Y") * GameManager.Instance.lookSensitivity * Time.deltaTime;
         rotY = Mathf.Clamp(rotY, -80f, 80f);
 
         if (!target)
@@ -199,12 +199,6 @@ public class FirstPersonCharacterController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown("escape"))
-        {
-            // Turn on the cursor
-            Cursor.lockState = CursorLockMode.None;
-        }
-
         if (hasFlashlight)
         {
             if (Input.GetKeyDown("f"))
@@ -213,11 +207,11 @@ public class FirstPersonCharacterController : MonoBehaviour
                 flashlightIsOn = !flashlightIsOn;
                 if (flashlightIsOn)
                 {
-                    audioManager.PlaySound(flashlightSoundOn);
+                    AudioManager.PlaySound(flashlightSoundOn);
                 }
                 else
                 {
-                    audioManager.PlaySound(flashlightSoundOff);
+                    AudioManager.PlaySound(flashlightSoundOff);
                 }
             }
             flashlight.enabled = flashlightIsOn;

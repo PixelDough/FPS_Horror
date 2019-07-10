@@ -47,9 +47,9 @@ public class AudioTape : Interactive
         uiGame.SetSubtitlesText(transcription);
         uiGame.PlaySubtitles(tapeOpenEffectSound.length, audioClip.length);
 
-        FindObjectOfType<AudioManager>().PlaySound(tapeOpenEffectSound);
-        FindObjectOfType<AudioManager>().PlaySound(audioClip, tapeOpenEffectSound.length);
-        FindObjectOfType<AudioManager>().PlaySound(tapeCloseEffectSound, tapeOpenEffectSound.length + audioClip.length);
+        AudioManager.PlaySound(tapeOpenEffectSound);
+        AudioManager.PlaySound(audioClip, tapeOpenEffectSound.length);
+        AudioManager.PlaySound(tapeCloseEffectSound, tapeOpenEffectSound.length + audioClip.length);
         
 
     }

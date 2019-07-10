@@ -28,14 +28,12 @@ public class Interactive : MonoBehaviour, IInteractable
     public AudioClip pickupSound;
 
     private UIGameManager uiGame;
-    private AudioManager audioManager;
 
 
     // Start is called before the first frame update
     public virtual void Start()
     {
         uiGame = FindObjectOfType<UIGameManager>();
-        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -65,7 +63,7 @@ public class Interactive : MonoBehaviour, IInteractable
     public Items GetItem()
     {
         this.gameObject.SetActive(false);
-        audioManager.PlaySound(pickupSound);
+        AudioManager.PlaySound(pickupSound);
         return item;
     }
 }

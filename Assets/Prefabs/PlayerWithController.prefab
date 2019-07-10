@@ -48,6 +48,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4706222510780767456, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7095410783604930968, guid: bf24d83707194204cb2e543f8c1c030e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -117,6 +122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sensitivity
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434129043656517705, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1565037610986364108, guid: bf24d83707194204cb2e543f8c1c030e,
         type: 3}

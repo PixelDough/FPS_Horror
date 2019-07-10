@@ -21,7 +21,7 @@ Material:
     m_TexEnvs: []
     m_Floats:
     - _ResX: 100
-    - _ResY: 200
+    - _ResY: 100
     - _ScaleWithZoom: 1
     m_Colors:
     - _ColorA: {r: 1, g: 1, b: 1, a: 1}

@@ -84,7 +84,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0.1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -136,7 +136,8 @@ AudioSource:
   m_GameObject: {fileID: 4124211791783257291}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: c142f1158fd70474f92a08a332eb6aae,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: c03643ceeea08de459d81b2826b46b53, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1

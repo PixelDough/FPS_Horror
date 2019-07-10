@@ -1,34 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!135 &2792287569829411572
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386192852245882748}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0.015679799, z: 0.050000004}
---- !u!114 &5125335205039264500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386192852245882748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca42d3223c13f074da4b830f3d6ba85b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  verb: 1
-  item: 1
-  itemName: Flashlight
-  pickupSound: {fileID: 8300000, guid: 33d246718618a914fbab6c4d70fa60be, type: 3}
 --- !u!1 &878007494916399001
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +91,35 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &2792287569829411572
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386192852245882748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.015679799, z: 0.050000004}
+--- !u!114 &5125335205039264500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386192852245882748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca42d3223c13f074da4b830f3d6ba85b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  verb: 1
+  item: 1
+  itemName: Flashlight
+  pickupSound: {fileID: 8300000, guid: 33d246718618a914fbab6c4d70fa60be, type: 3}
 --- !u!1001 &1930553539595203660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -196,6 +196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321798431775730430, guid: ea65ce79b604bfb43b0b140ebfcc2e1a,
+        type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5511954226139520295, guid: ea65ce79b604bfb43b0b140ebfcc2e1a,
         type: 3}

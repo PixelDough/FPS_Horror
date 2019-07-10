@@ -13,11 +13,10 @@ public class LightFlickerToggle : MonoBehaviour
     bool m_IsActive = false;
     float m_flickerTime = 1f;
 
-    AudioManager audioManager;
 
     private void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
+
     }
 
 
@@ -28,7 +27,7 @@ public class LightFlickerToggle : MonoBehaviour
         {
             m_IsActive = true;
 
-            if (audioClip) audioManager.PlaySound(audioClip);
+            if (audioClip) AudioManager.PlaySound(audioClip);
         }
 
         if (m_IsActive)

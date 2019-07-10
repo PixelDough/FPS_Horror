@@ -18,8 +18,6 @@ public class Door : Interactive
     private Quaternion m_InitialDoorRotation;
     private UIGameManager m_uiGame;
 
-    private AudioManager audioManager;
-
     public Items itemToUnlock;
 
     // Start is called before the first frame update
@@ -28,7 +26,6 @@ public class Door : Interactive
         base.Start();
         m_InitialDoorRotation = transform.rotation;
         m_uiGame = FindObjectOfType<UIGameManager>();
-        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -81,12 +78,12 @@ public class Door : Interactive
         if (isLocked)
         {
             handleAnimator.Play("Locked");
-            audioManager.PlaySound(doorLockedSound);
+            AudioManager.PlaySound(doorLockedSound);
         }
         else
         {
             handleAnimator.Play("Unlocked");
-            audioManager.PlaySound(doorUnlockedSound);
+            AudioManager.PlaySound(doorUnlockedSound);
             m_IsOpen = !m_IsOpen;
         }
     }
