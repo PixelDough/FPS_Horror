@@ -799,10 +799,10 @@ RectTransform:
   m_Father: {fileID: 2825786484004552560}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 178.40005, y: 4.5}
-  m_SizeDelta: {x: -1679.5, y: -987}
+  m_SizeDelta: {x: 240.5, y: 93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2825786482374741287
 CanvasRenderer:
@@ -2128,7 +2128,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 69
+  m_fontSize: 68.6
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3486,10 +3486,10 @@ RectTransform:
   m_Father: {fileID: 2825786484004552560}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 248, y: 98}
-  m_SizeDelta: {x: -1540, y: -993.2}
+  m_SizeDelta: {x: 380, y: 86.79999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2825786483167289027
 CanvasRenderer:
@@ -4148,10 +4148,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2825786482332643198}
   m_HandleRect: {fileID: 2825786483574306569}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0
+  m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -5012,10 +5012,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2825786483499386055}
   m_HandleRect: {fileID: 2825786483382785650}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0
+  m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -5840,10 +5840,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2825786482990515972}
   m_HandleRect: {fileID: 2825786483471640747}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0
+  m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

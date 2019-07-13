@@ -31,6 +31,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformToMove: {fileID: 7317851764347731692}
+--- !u!114 &2324836112315956802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3582720501171035476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78da3f00f3328541b4526c0b0b5ec5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineThickness: 1.25
+  lineIntensity: 0.5
+  fillAmount: 0.2
+  lineColor0: {r: 1, g: 0, b: 0, a: 1}
+  lineColor1: {r: 0, g: 1, b: 0, a: 1}
+  lineColor2: {r: 0, g: 0, b: 1, a: 1}
+  additiveRendering: 0
+  backfaceCulling: 1
+  cornerOutlines: 1
+  addLinesBetweenColors: 0
+  scaleWithScreenSize: 1
+  alphaCutoff: 0.5
+  flipY: 0
+  sourceCamera: {fileID: 3582720501171035478}
+  outlineCamera: {fileID: 0}
+  outlineShaderMaterial: {fileID: 0}
+  renderTexture: {fileID: 0}
+  extraRenderTexture: {fileID: 0}
 --- !u!1001 &574716840036927348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -163,9 +193,23 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1678426380782723610, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224063061986351469, guid: bf24d83707194204cb2e543f8c1c030e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1580630199977961, guid: bf24d83707194204cb2e543f8c1c030e, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580630199977961, guid: bf24d83707194204cb2e543f8c1c030e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1314441706503945, guid: bf24d83707194204cb2e543f8c1c030e, type: 3}
       propertyPath: m_Layer
@@ -191,7 +235,7 @@ PrefabInstance:
     - target: {fileID: 114098446808182571, guid: bf24d83707194204cb2e543f8c1c030e,
         type: 3}
       propertyPath: resolutionVert
-      value: 500
+      value: 547
       objectReference: {fileID: 0}
     - target: {fileID: 114098446808182571, guid: bf24d83707194204cb2e543f8c1c030e,
         type: 3}
@@ -231,6 +275,18 @@ GameObject:
 --- !u!4 &7317851764347731692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7095410783604930968, guid: bf24d83707194204cb2e543f8c1c030e,
+    type: 3}
+  m_PrefabInstance: {fileID: 574716840036927348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3582720501171035476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3909595873261722144, guid: bf24d83707194204cb2e543f8c1c030e,
+    type: 3}
+  m_PrefabInstance: {fileID: 574716840036927348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &3582720501171035478 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3909595873261722146, guid: bf24d83707194204cb2e543f8c1c030e,
     type: 3}
   m_PrefabInstance: {fileID: 574716840036927348}
   m_PrefabAsset: {fileID: 0}

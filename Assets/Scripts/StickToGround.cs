@@ -12,7 +12,10 @@ public class StickToGround : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transformToMove.position += (standingOn.position - standingOnLast);
+        if (standingOn)
+        {
+            transformToMove.position += (standingOn.position - standingOnLast);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

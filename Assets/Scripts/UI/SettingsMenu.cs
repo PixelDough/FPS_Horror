@@ -72,32 +72,32 @@ public class SettingsMenu : MonoBehaviour
 
     void Update()
     {
-        mainVolumeNumber.text = (mainVolumeSlider.value + 80).ToString();
-        ambienceVolumeNumber.text = (ambienceVolumeSlider.value + 80).ToString();
-        soundsVolumeNumber.text = (soundsVolumeSlider.value + 80).ToString();
+        mainVolumeNumber.text = ((mainVolumeSlider.value)).ToString();
+        ambienceVolumeNumber.text = ((ambienceVolumeSlider.value)).ToString();
+        soundsVolumeNumber.text = ((soundsVolumeSlider.value)).ToString();
 
         lookSensitivityNumber.text = lookSensitivitySlider.value.ToString();
     }
 
     public void SetResolution(int resolutionIndex)
-    {
+    { 
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
     public void SetVolumeMaster(float volume)
     {
-        audioMixer.SetFloat("volumeMaster", volume);
+        audioMixer.SetFloat("volumeMaster", (((volume - 0) * (0 - -80)) / (100 - 0)) + -80);
     }
 
     public void SetVolumeSounds(float volume)
     {
-        audioMixer.SetFloat("volumeSounds", volume);
+        audioMixer.SetFloat("volumeSounds", (((volume - 0) * (0 - -80)) / (100 - 0)) + -80);
     }
 
     public void SetVolumeAmbience(float volume)
     {
-        audioMixer.SetFloat("volumeAmbience", volume);
+        audioMixer.SetFloat("volumeAmbience", (((volume - 0) * (0 - -80)) / (100 - 0)) + -80);
     }
 
     public void SetQuality(int qualityIndex)
