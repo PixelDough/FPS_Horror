@@ -39,7 +39,7 @@ public class Door : Interactive
         if (m_IsOpen)
         {
             doorCollider.isTrigger = true;
-            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles + new Vector3(0, 90f, 0) * openDirection, speed * Time.deltaTime);
+            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles + new Vector3(0, 90f, 0), speed * Time.deltaTime);
         }
         else
         {

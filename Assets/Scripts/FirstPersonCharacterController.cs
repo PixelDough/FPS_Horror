@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FirstPersonCharacterController : MonoBehaviour
 {
+
+    private InputMaster controls;
+
     public float walkSpeed = 4.0f;
     public float runSpeed = 7.0f;
     public float sensitivity = 2f;
@@ -38,6 +42,20 @@ public class FirstPersonCharacterController : MonoBehaviour
 
     private Interactive.Items item;
 
+
+    #region Input
+    bool interactButton;
+    #endregion
+
+
+
+
+    void Awake()
+    {
+        controls = new InputMaster();
+        controls.Player.Interact.performed += ctx => interactButton = true;
+    }
+
     void Start()
     {
         // Turn off the cursor
@@ -50,7 +68,19 @@ public class FirstPersonCharacterController : MonoBehaviour
         m_uiGame = FindObjectOfType<UIGameManager>();
         audioManager = FindObjectOfType<AudioManager>();
 
+        
+
         // TODO Freeze Rigidbody's X and Z rotation from code.
+    }
+
+    void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    void OnDisable()
+    {
+        controls.Disable();
     }
 
     private void FixedUpdate()
@@ -61,7 +91,6 @@ public class FirstPersonCharacterController : MonoBehaviour
 
         moveFB = Input.GetAxis("Vertical") * finalSpeed * Time.deltaTime;
         moveLR = Input.GetAxis("Horizontal") * finalSpeed * Time.deltaTime;
-
         
 
         Vector3 movement = new Vector3(moveLR, 0, moveFB);
@@ -136,10 +165,13 @@ public class FirstPersonCharacterController : MonoBehaviour
         flashlight.transform.rotation = Quaternion.Lerp(flashlight.transform.rotation, cam.transform.rotation, 0.1f);
 
         #endregion
+
+        interactButton = false;
     }
 
     private void Update()
     {
+
         if (PauseManager.isPaused) { return; }
 
         #region Raycasting for Interaction
@@ -163,7 +195,7 @@ public class FirstPersonCharacterController : MonoBehaviour
                 {
                     interacted.LookAt();
 
-                    if (Input.GetKeyDown(KeyCode.E))
+                    if (Input.GetKeyDown("e"))
                     {
                         interacted.Interact();
                         if (interacted.verb == Interactive.Verbs.GET)
@@ -179,15 +211,15 @@ public class FirstPersonCharacterController : MonoBehaviour
 
 
         //target = null;
-        Collider[] overlap = Physics.OverlapSphere(transform.position, 5f);
-        foreach (Collider c in overlap)
-        {
-            if (c.gameObject.GetComponent<Monster_TV>())
-            {
-                c.gameObject.GetComponent<Monster_TV>().alive = true;
-                target = c.GetComponent<Monster_TV>().screenTransform;
-            }
-        }
+        //Collider[] overlap = Physics.OverlapSphere(transform.position, 5f);
+        //foreach (Collider c in overlap)
+        //{
+        //    if (c.gameObject.GetComponent<Monster_TV>())
+        //    {
+        //        c.gameObject.GetComponent<Monster_TV>().alive = true;
+        //        target = c.GetComponent<Monster_TV>().screenTransform;
+        //    }
+        //}
 
         hasFlashlight = false;
         // Inventory check

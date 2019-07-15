@@ -21,8 +21,8 @@ public class Monster_TV : MonoBehaviour
         if (alive)
         {
             GetComponent<NavMeshAgent>().destination = FindObjectOfType<FirstPersonCharacterController>().gameObject.transform.position;
-            GetComponent<NavMeshAgent>().speed = 3f;
-            lights.SetActive(true);
+            //GetComponent<NavMeshAgent>().speed = 3f;
+            //lights.SetActive(true);
         }
     }
 }

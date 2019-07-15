@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 
 public class SettingsMenu : MonoBehaviour
 {
     [Header("Graphics Settings")]
     public TMPro.TMP_Dropdown resolutionDropdown;
+
+    [Space]
+    public Toggle motionBlurToggle;
+    public Toggle depthOfFieldToggle;
+    public Toggle grainToggle;
 
     [Header("Audio Settings")]
     public AudioMixer audioMixer;
@@ -29,6 +35,10 @@ public class SettingsMenu : MonoBehaviour
     public TMPro.TMP_Text lookSensitivityNumber;
 
     Resolution[] resolutions;
+
+    MotionBlur motionBlur;
+    DepthOfField depthOfField;
+    Grain grain;
 
     void Start()
     {
@@ -68,6 +78,12 @@ public class SettingsMenu : MonoBehaviour
 
         lookSensitivitySlider.value = GameManager.Instance.lookSensitivity;
 
+
+        // Post processing
+        PostProcessVolume volume = FindObjectOfType<PostProcessVolume>().GetComponent<PostProcessVolume>();
+        volume.profile.TryGetSettings(out motionBlur);
+        volume.profile.TryGetSettings(out depthOfField);
+        volume.profile.TryGetSettings(out grain);
     }
 
     void Update()
@@ -77,6 +93,10 @@ public class SettingsMenu : MonoBehaviour
         soundsVolumeNumber.text = ((soundsVolumeSlider.value)).ToString();
 
         lookSensitivityNumber.text = lookSensitivitySlider.value.ToString();
+
+        motionBlurToggle.isOn = motionBlur.active;
+        depthOfFieldToggle.isOn = depthOfField.active;
+        grainToggle.isOn = grain.active;
     }
 
     public void SetResolution(int resolutionIndex)
@@ -113,6 +133,21 @@ public class SettingsMenu : MonoBehaviour
     public void SetVSync(bool state)
     {
         QualitySettings.vSyncCount = state ? 1 : 0;
+    }
+
+    public void SetMotionBlur(bool state)
+    {
+        motionBlur.active = state;
+    }
+
+    public void SetDepthOfField(bool state)
+    {
+        depthOfField.active = state;
+    }
+
+    public void SetGrain(bool state)
+    {
+        grain.active = state;
     }
 
     public void SetLookSensitivity(float sensitivity)
