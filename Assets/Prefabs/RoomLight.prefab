@@ -136,13 +136,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7268491759755465779}
   - component: {fileID: 478792328683826559}
+  - component: {fileID: 5055974383378124912}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7268491759755465779
 Transform:
   m_ObjectHideFlags: 0
@@ -217,3 +218,15 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &5055974383378124912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556810959497491649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516d95332f3da7d468b96d2cf18d0200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

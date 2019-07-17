@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &8384858476568587502
 Transform:
@@ -49,6 +49,7 @@ MonoBehaviour:
   verb: 2
   item: 0
   itemName: Door
+  pickupSound: {fileID: 0}
   isLocked: 0
   handleAnimator: {fileID: 3501110079924302095}
   glowMesh: {fileID: 0}
@@ -57,6 +58,7 @@ MonoBehaviour:
   doorLockedSound: {fileID: 8300000, guid: 377bdb272b2f9b443a1cd41e5c6a7448, type: 3}
   doorUnlockedSound: {fileID: 8300000, guid: 9c2edf382b2f2cd459c4ce0b86fb766f, type: 3}
   openDirection: -1
+  itemToUnlock: 0
 --- !u!208 &4531047297542692333
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -112,46 +114,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8384858476568587502}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: feedddec02112c048a57b14e6078472b,
-        type: 3}
-      propertyPath: m_Name
-      value: Door
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: feedddec02112c048a57b14e6078472b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: -3990036101274998414, guid: feedddec02112c048a57b14e6078472b,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -3990036101274998414, guid: feedddec02112c048a57b14e6078472b,
-        type: 3}
-      propertyPath: m_Name
-      value: ModelDoor
-      objectReference: {fileID: 0}
-    - target: {fileID: -3990036101274998414, guid: feedddec02112c048a57b14e6078472b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 326680701022325867, guid: feedddec02112c048a57b14e6078472b,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 326680701022325867, guid: feedddec02112c048a57b14e6078472b,
-        type: 3}
-      propertyPath: m_Name
-      value: ModelHandle
-      objectReference: {fileID: 0}
-    - target: {fileID: 326680701022325867, guid: feedddec02112c048a57b14e6078472b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: feedddec02112c048a57b14e6078472b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -207,6 +169,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: feedddec02112c048a57b14e6078472b,
+        type: 3}
+      propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: feedddec02112c048a57b14e6078472b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: feedddec02112c048a57b14e6078472b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7382072391137664400, guid: feedddec02112c048a57b14e6078472b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -246,6 +223,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3990036101274998414, guid: feedddec02112c048a57b14e6078472b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3990036101274998414, guid: feedddec02112c048a57b14e6078472b,
+        type: 3}
+      propertyPath: m_Name
+      value: ModelDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: -3990036101274998414, guid: feedddec02112c048a57b14e6078472b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 326680701022325867, guid: feedddec02112c048a57b14e6078472b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 326680701022325867, guid: feedddec02112c048a57b14e6078472b,
+        type: 3}
+      propertyPath: m_Name
+      value: ModelHandle
+      objectReference: {fileID: 0}
+    - target: {fileID: 326680701022325867, guid: feedddec02112c048a57b14e6078472b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5767974960422501358, guid: feedddec02112c048a57b14e6078472b,
         type: 3}

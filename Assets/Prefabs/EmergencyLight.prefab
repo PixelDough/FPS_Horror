@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6646266023705901472}
   - component: {fileID: 7858248234825677954}
   - component: {fileID: 178325668638553296}
+  - component: {fileID: 5123635232341473361}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -63,6 +64,7 @@ Transform:
   - {fileID: 9060227912299857694}
   - {fileID: 8486120640120522209}
   - {fileID: 1965687889299110833}
+  - {fileID: 1082021325967446800}
   m_Father: {fileID: 1173411754113020823}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 135, y: 0, z: 0}
@@ -133,7 +135,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2882147902611076870}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5b2cb2d551c753646a563b6871236030, type: 3}
@@ -240,6 +242,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5123635232341473361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882147902611076870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516d95332f3da7d468b96d2cf18d0200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4261999323255449240
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,12 +278,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4261999323255449240}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: -2.022}
+  m_LocalRotation: {x: -0.92387956, y: -0, z: -0, w: 0.3826834}
+  m_LocalPosition: {x: 0, y: -1.0762168, z: 1.0762172}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6916573959747874109}
-  m_RootOrder: 1
+  m_Father: {fileID: 6646266023705901472}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &6039997431839764781
 Light:
@@ -1410,7 +1424,6 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1173411754113020823}
-  - {fileID: 1082021325967446800}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
