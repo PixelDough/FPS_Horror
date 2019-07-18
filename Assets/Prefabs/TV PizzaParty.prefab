@@ -89,6 +89,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 69df4fbe9fc9d9f4d9b89591394f7318, type: 3}
+    - target: {fileID: 2398904255317717796, guid: 8332c97d5c44cd0479538c2abb288050,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3740284358510612921, guid: 8332c97d5c44cd0479538c2abb288050,
         type: 3}
       propertyPath: m_LocalRotation.x

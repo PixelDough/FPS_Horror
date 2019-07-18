@@ -14,7 +14,7 @@ public class Door : Interactive
 
     public int openDirection = -1;
 
-    private bool m_IsOpen = false;
+    public bool m_IsOpen = false;
     private Quaternion m_InitialDoorRotation;
     private UIGameManager m_uiGame;
 
