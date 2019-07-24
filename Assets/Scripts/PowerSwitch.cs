@@ -6,7 +6,7 @@ public class PowerSwitch : Interactive
 {
     public GameObject lever;
     public bool isOn = false;
-    //public GameObject lights;
+    public GameObject lights;
 
     private Vector3 m_InitialLeverRotation;
 
@@ -44,10 +44,21 @@ public class PowerSwitch : Interactive
 
     private void SetLights(bool isOn)
     {
-        OnPowerGrid[] powerGrid = (OnPowerGrid[])Resources.FindObjectsOfTypeAll(typeof(OnPowerGrid));
-        foreach (OnPowerGrid i in powerGrid)
+        if (lights == null)
         {
-            i.gameObject.SetActive(isOn);
+            OnPowerGrid[] powerGrid = (OnPowerGrid[])Resources.FindObjectsOfTypeAll(typeof(OnPowerGrid));
+            foreach (OnPowerGrid i in powerGrid)
+            {
+                i.gameObject.SetActive(isOn);
+            }
+        }
+        else
+        {
+            OnPowerGrid[] allLights = lights.GetComponentsInChildren<OnPowerGrid>(true);
+            foreach(OnPowerGrid l in allLights)
+            {
+                l.gameObject.SetActive(isOn);
+            }
         }
     }
 }

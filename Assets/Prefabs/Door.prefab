@@ -58,6 +58,7 @@ MonoBehaviour:
   doorLockedSound: {fileID: 8300000, guid: 377bdb272b2f9b443a1cd41e5c6a7448, type: 3}
   doorUnlockedSound: {fileID: 8300000, guid: 9c2edf382b2f2cd459c4ce0b86fb766f, type: 3}
   openDirection: -1
+  m_IsOpen: 0
   itemToUnlock: 0
 --- !u!208 &4531047297542692333
 NavMeshObstacle:
@@ -183,6 +184,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940632808050562651, guid: feedddec02112c048a57b14e6078472b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7382072391137664400, guid: feedddec02112c048a57b14e6078472b,
         type: 3}

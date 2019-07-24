@@ -39,12 +39,21 @@ public class Door : Interactive
         if (m_IsOpen)
         {
             doorCollider.isTrigger = true;
-            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles + new Vector3(0, 90f, 0), speed * Time.deltaTime);
+            //transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles + new Vector3(0, 90f, 0), speed * Time.deltaTime);
+            //Mathf.MoveTowardsAngle
+            if (!Mathf.Approximately(transform.rotation.eulerAngles.y, m_InitialDoorRotation.eulerAngles.y + 90f))
+            {
+                transform.eulerAngles = new Vector3(transform.rotation.x, Mathf.LerpAngle(transform.rotation.eulerAngles.y, m_InitialDoorRotation.eulerAngles.y + 90f, speed * Time.deltaTime), transform.rotation.z);
+            }
         }
         else
         {
             doorCollider.isTrigger = false;
-            transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles, speed * Time.deltaTime);
+            //transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, m_InitialDoorRotation.eulerAngles, speed * Time.deltaTime);
+            if (!Mathf.Approximately(transform.rotation.eulerAngles.y, m_InitialDoorRotation.eulerAngles.y))
+            {
+                transform.eulerAngles = new Vector3(transform.rotation.x, Mathf.LerpAngle(transform.rotation.eulerAngles.y, m_InitialDoorRotation.eulerAngles.y, speed * Time.deltaTime), transform.rotation.z);
+            }
         }
     }
 
