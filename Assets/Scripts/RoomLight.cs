@@ -7,7 +7,7 @@ public class RoomLight : MonoBehaviour
 {
     void Update()
     {
-        GetComponent<Light>().range = 10f * (transform.lossyScale.x + transform.lossyScale.z) / 2f;
+        GetComponent<Light>().range = 20f * (transform.lossyScale.x + transform.lossyScale.z) / 2f;
     }
 
 }
