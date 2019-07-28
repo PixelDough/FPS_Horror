@@ -87,7 +87,7 @@ public class FirstPersonCharacterController : MonoBehaviour
     {
         #region Movement
         float finalSpeed = walkSpeed;
-        if (Input.GetButton("Run")) { finalSpeed = runSpeed; }
+        if (Input.GetButton("Run") && Input.GetAxis("Vertical") >= 0) { finalSpeed = runSpeed; }
 
         moveFB = Input.GetAxis("Vertical") * finalSpeed * Time.deltaTime;
         moveLR = Input.GetAxis("Horizontal") * finalSpeed * Time.deltaTime;

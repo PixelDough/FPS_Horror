@@ -37,6 +37,16 @@ public class AudioManager : MonoBehaviour
         return source;
     }
 
+    public static AudioSource PlaySound(AudioClip audioClip, bool loop)
+    {
+        AudioSource source = MakeSoundObject().GetComponent<AudioSource>();
+        source.clip = audioClip;
+        source.loop = loop;
+        source.Play();
+        //Destroy(source.gameObject, audioClip.length);
+        return source;
+    }
+
     public static AudioSource PlaySound(AudioClip audioClip, float delayInSeconds)
     {
         AudioSource source = MakeSoundObject().GetComponent<AudioSource>();

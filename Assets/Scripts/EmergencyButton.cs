@@ -5,6 +5,7 @@ using UnityEngine;
 public class EmergencyButton : Interactive
 {
     public bool isOpen = false;
+    public bool hasBeenPressed = false;
 
     private Animator animator;
 
@@ -36,6 +37,7 @@ public class EmergencyButton : Interactive
         if (isOpen)
         {
             animator.Play("ButtonPress", 0, 0f);
+            hasBeenPressed = true;
         }
         else
         {
