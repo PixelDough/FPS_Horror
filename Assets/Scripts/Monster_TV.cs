@@ -14,16 +14,20 @@ public class Monster_TV : MonoBehaviour
     public PowerSwitch powerSwitch;
     public EmergencyButton emergencyButton;
 
+    public FlashBlack blackout;
+
     private int stepNum = 0;
     private AudioSource shockSource;
     private Vector3 startPos;
     private Quaternion startRot;
+    private Vector3 startScale;
 
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
         startRot = transform.rotation;
+        startScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -32,6 +36,18 @@ public class Monster_TV : MonoBehaviour
         if (alive)
         {
             GetComponent<NavMeshAgent>().destination = FindObjectOfType<FirstPersonCharacterController>().gameObject.transform.position;
+            GetComponent<NavMeshAgent>().updateRotation = false;
+            if (blackout.IsOnBlack())
+            {
+                GetComponent<NavMeshAgent>().updatePosition = true;
+
+            }
+            else
+            {
+                GetComponent<NavMeshAgent>().updatePosition = false;
+                InstantlyTurn(GetComponent<NavMeshAgent>().destination);
+
+            }
             //GetComponent<NavMeshAgent>().speed = 3f;
             //lights.SetActive(true);
         }
@@ -54,20 +70,23 @@ public class Monster_TV : MonoBehaviour
             case 2:
                 startPos = transform.position;
                 startRot = transform.rotation;
-                //transform.position = new Vector3(999, 999, 999);
+                transform.localScale = new Vector3(0, 0, 0);
                 if (emergencyButton.hasBeenPressed)
                 {
                     shockSource.Stop();
                     StartCoroutine(StartHit());
                     stepNum = 3;
+                    powerSwitch.SetLights(false);
                 }
                 break;
             case 3:
                 
                 break;
             case 4:
+                powerSwitch.SetLights(true);
                 transform.position = startPos;
                 transform.rotation = Quaternion.Euler(startRot.eulerAngles.x, startRot.eulerAngles.y + 180, startRot.eulerAngles.z);
+                transform.localScale = startScale;
                 GetComponentInChildren<Animator>().Play("Idle", 0, 0);
                 StartCoroutine(StartAttack());
                 stepNum = 5;
@@ -82,9 +101,21 @@ public class Monster_TV : MonoBehaviour
         }
     }
 
+    private void InstantlyTurn(Vector3 destination)
+    {
+        if ((destination - transform.position).magnitude < 0.1f) return;
+
+        Vector3 direction = (destination - transform.position).normalized;
+        Quaternion qDir = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, qDir, Time.deltaTime * 100f);
+    }
+
     IEnumerator StartHit()
     {
         yield return new WaitForSeconds(2);
+        blackout.StartFlashing();
+        while (!blackout.IsOnBlack()) { yield return new WaitForSeconds(0f); }
+
         stepNum = 4;
     }
 

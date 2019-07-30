@@ -48,8 +48,6 @@ public class FirstPersonCharacterController : MonoBehaviour
     #endregion
 
 
-
-
     void Awake()
     {
         controls = new InputMaster();

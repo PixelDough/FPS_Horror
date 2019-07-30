@@ -70,6 +70,9 @@ MonoBehaviour:
   itemName: Button
   pickupSound: {fileID: 0}
   isOpen: 0
+  hasBeenPressed: 0
+  powerSwitch: {fileID: 0}
+  errorSound: {fileID: 8300000, guid: d3d675adc18a47b42850c611920c542d, type: 3}
 --- !u!136 &7024121568835500838
 CapsuleCollider:
   m_ObjectHideFlags: 0

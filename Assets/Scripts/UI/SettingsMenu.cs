@@ -107,17 +107,20 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetVolumeMaster(float volume)
     {
-        audioMixer.SetFloat("volumeMaster", (((volume - 0) * (0 - -80)) / (100 - 0)) + -80);
+        //audioMixer.SetFloat("volumeMaster", (((volume - 0) * (0 - -80)) / (100 - 0)) + -80);
+        audioMixer.SetFloat("volumeMaster", volume);
     }
 
     public void SetVolumeSounds(float volume)
     {
-        audioMixer.SetFloat("volumeSounds", (((volume - 0) * (0 - -80)) / (100 - 0)) + -80);
+        //audioMixer.SetFloat("volumeSounds", (((volume - 0) * (0 - -80)) / (100 - 0)) + -80);
+        audioMixer.SetFloat("volumeSounds", volume);
     }
 
     public void SetVolumeAmbience(float volume)
     {
-        audioMixer.SetFloat("volumeAmbience", (((volume - 0) * (0 - -80)) / (100 - 0)) + -80);
+        //audioMixer.SetFloat("volumeAmbience", (((volume - 0) * (0 - -80)) / (100 - 0)) + -80);
+        audioMixer.SetFloat("volumeAmbience", volume);
     }
 
     public void SetQuality(int qualityIndex)

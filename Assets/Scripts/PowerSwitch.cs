@@ -42,7 +42,7 @@ public class PowerSwitch : Interactive
         SetLights(isOn);
     }
 
-    private void SetLights(bool isOn)
+    public void SetLights(bool isOn)
     {
         if (lights == null)
         {

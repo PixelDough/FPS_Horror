@@ -7,6 +7,9 @@ public class EmergencyButton : Interactive
     public bool isOpen = false;
     public bool hasBeenPressed = false;
 
+    public PowerSwitch powerSwitch;
+    public AudioClip errorSound;
+
     private Animator animator;
 
     // Start is called before the first frame update
@@ -37,7 +40,14 @@ public class EmergencyButton : Interactive
         if (isOpen)
         {
             animator.Play("ButtonPress", 0, 0f);
-            hasBeenPressed = true;
+            if (powerSwitch.isOn)
+            {
+                hasBeenPressed = true;
+            }
+            else
+            {
+                AudioManager.PlaySound(errorSound);
+            }
         }
         else
         {
