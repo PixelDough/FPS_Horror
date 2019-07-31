@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Elevator : MonoBehaviour
 {
     public TriggerVolume triggerVolume;
     public bool isPowered = false;
+    public Animator doorAnimator;
+    public CanvasGroup credits;
 
     bool isGoingUp = false;
     float speed = 0f;
@@ -46,9 +49,13 @@ public class Elevator : MonoBehaviour
 
     IEnumerator StartGoingUp()
     {
+        doorAnimator.Play("Close");
+        FindObjectOfType<Monster_TV>().alive = false;
+        GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(2.0f);
         isGoingUp = true;
-        FindObjectOfType<Monster_TV>().alive = false;
+        credits.alpha = 1.0f;
+        
     }
     
 }

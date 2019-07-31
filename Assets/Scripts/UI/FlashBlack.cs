@@ -27,4 +27,10 @@ public class FlashBlack : MonoBehaviour
         }
 
     }
+
+    public void StopFlashing()
+    {
+        StopCoroutine(Flash());
+        GetComponent<CanvasGroup>().alpha = 0;
+    }
 }

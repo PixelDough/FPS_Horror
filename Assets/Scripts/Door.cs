@@ -100,7 +100,8 @@ public class Door : Interactive
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Entered");
-        if (other.gameObject.GetComponent<Monster_TV>())
+        
+        if (other.gameObject.GetComponent<Monster_TV>() || other.gameObject.GetComponent<FirstPersonCharacterController>())
         {
             if (isLocked && item == Items.NONE) { return; }
 

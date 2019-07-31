@@ -57,4 +57,9 @@ public class UIGameManager : MonoBehaviour
         if (text == "")
             interactText.text = "";
     }
+
+    public float GetSubtitlesAlpha()
+    {
+        return subtitlesText.alpha;
+    }
 }

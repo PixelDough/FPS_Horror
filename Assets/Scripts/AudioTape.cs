@@ -31,6 +31,15 @@ public class AudioTape : Interactive
     public override void Update()
     {
         GetComponentInChildren<MeshRenderer>().material = startMaterial;
+
+        if (uiGame.GetSubtitlesAlpha() <= 0)
+        {
+            GetComponent<Collider>().enabled = true;
+        }
+        else
+        {
+            GetComponent<Collider>().enabled = false;
+        }
     }
 
     public override void LookAt()
@@ -42,6 +51,7 @@ public class AudioTape : Interactive
 
     public override void Interact()
     {
+        
         base.Interact();
 
         uiGame.SetSubtitlesText(transcription);
@@ -50,7 +60,6 @@ public class AudioTape : Interactive
         AudioManager.PlaySound(tapeOpenEffectSound);
         AudioManager.PlaySound(audioClip, tapeOpenEffectSound.length);
         AudioManager.PlaySound(tapeCloseEffectSound, tapeOpenEffectSound.length + audioClip.length);
-        
 
     }
 }

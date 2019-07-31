@@ -88,55 +88,58 @@ public class FirstPersonCharacterController : MonoBehaviour
     private void FixedUpdate()
     {
         #region Movement
-        float finalSpeed = walkSpeed;
-        if (Input.GetButton("Run") && Input.GetAxis("Vertical") >= 0) { finalSpeed = runSpeed; }
-
-        moveFB = Input.GetAxis("Vertical") * finalSpeed * Time.deltaTime;
-        moveLR = Input.GetAxis("Horizontal") * finalSpeed * Time.deltaTime;
-        
-
-        Vector3 movement = new Vector3(moveLR, 0, moveFB);
-
-        
-        var forward = headJoint.transform.forward;
-        var right = headJoint.transform.right;
-        forward.y = 0f;
-        right.y = 0f;
-        forward.Normalize();
-        right.Normalize();
-
-        var desiredMoveDirection = forward * moveFB + right * moveLR;
-
-        //var moveX = Mathf.Sin(Camera.main.transform.rotation.eulerAngles.y * (Mathf.PI/180));
-        //var moveY = Mathf.Cos(Camera.main.transform.rotation.eulerAngles.y * (Mathf.PI / 180));
-        //print(Camera.main.transform.rotation.eulerAngles.y);
-        //var desiredMoveDirection = new Vector3(moveX, 0, moveY);
-        //desiredMoveDirection.z *= moveLR;
-
-
-        //this.GetComponent<Rigidbody>().MovePosition(transform.position + (desiredMoveDirection * Time.deltaTime));
-
-
-        if (!this.GetComponent<CharacterController>())
+        if (m_isAlive)
         {
-            this.GetComponent<Rigidbody>().MovePosition(transform.position + (desiredMoveDirection * Time.deltaTime));
-        }
-        else
-        {
-            ySpeed -= 100 * Time.deltaTime;
-            desiredMoveDirection.y += ySpeed;
-            this.GetComponent<CharacterController>().Move((desiredMoveDirection * Time.deltaTime));
-            if (GetComponent<CharacterController>().isGrounded)
+            float finalSpeed = walkSpeed;
+            if (Input.GetButton("Run") && Input.GetAxis("Vertical") >= 0) { finalSpeed = runSpeed; }
+
+            moveFB = Input.GetAxis("Vertical") * finalSpeed * Time.deltaTime;
+            moveLR = Input.GetAxis("Horizontal") * finalSpeed * Time.deltaTime;
+
+
+            Vector3 movement = new Vector3(moveLR, 0, moveFB);
+
+
+            var forward = headJoint.transform.forward;
+            var right = headJoint.transform.right;
+            forward.y = 0f;
+            right.y = 0f;
+            forward.Normalize();
+            right.Normalize();
+
+            var desiredMoveDirection = forward * moveFB + right * moveLR;
+
+            //var moveX = Mathf.Sin(Camera.main.transform.rotation.eulerAngles.y * (Mathf.PI/180));
+            //var moveY = Mathf.Cos(Camera.main.transform.rotation.eulerAngles.y * (Mathf.PI / 180));
+            //print(Camera.main.transform.rotation.eulerAngles.y);
+            //var desiredMoveDirection = new Vector3(moveX, 0, moveY);
+            //desiredMoveDirection.z *= moveLR;
+
+
+            //this.GetComponent<Rigidbody>().MovePosition(transform.position + (desiredMoveDirection * Time.deltaTime));
+
+
+            if (!this.GetComponent<CharacterController>())
             {
-                print("Grounded");
-                ySpeed = 0f;
+                this.GetComponent<Rigidbody>().MovePosition(transform.position + (desiredMoveDirection * Time.deltaTime));
             }
             else
             {
-                print("Not grounded");
-                
+                ySpeed -= 100 * Time.deltaTime;
+                desiredMoveDirection.y += ySpeed;
+                this.GetComponent<CharacterController>().Move((desiredMoveDirection * Time.deltaTime));
+                if (GetComponent<CharacterController>().isGrounded)
+                {
+                    print("Grounded");
+                    ySpeed = 0f;
+                }
+                else
+                {
+                    print("Not grounded");
+
+                }
+
             }
-            
         }
         #endregion
 
@@ -157,11 +160,16 @@ public class FirstPersonCharacterController : MonoBehaviour
         {
             Transform currentHead = headJoint.transform;
             currentHead.LookAt(target);
+            cam.transform.LookAt(target);
+
+
+            //cam.transform.localRotation = Quaternion.Lerp(cam.transform.localRotation, currentHead.transform.rotation, 0.001f);
+            cam.transform.localRotation = Quaternion.Euler(new Vector3(cam.transform.localRotation.eulerAngles.x, 0, 0));
 
             headJoint.transform.rotation = Quaternion.Lerp(headJoint.transform.rotation, currentHead.transform.rotation, 0.001f);
-            //cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, currentHead.transform.rotation, 0.001f);
+            headJoint.transform.rotation = Quaternion.Euler(new Vector3(0, headJoint.transform.rotation.eulerAngles.y, 0));
 
-            cam.transform.LookAt(target);
+            
         }
         else
         {

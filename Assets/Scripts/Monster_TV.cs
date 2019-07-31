@@ -25,6 +25,7 @@ public class Monster_TV : MonoBehaviour
     private Vector3 startPos;
     private Quaternion startRot;
     private Vector3 startScale;
+    private float startSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class Monster_TV : MonoBehaviour
         startPos = transform.position;
         startRot = transform.rotation;
         startScale = transform.localScale;
+        startSpeed = GetComponent<NavMeshAgent>().speed;
     }
 
     // Update is called once per frame
@@ -39,6 +41,15 @@ public class Monster_TV : MonoBehaviour
     {
         if (alive)
         {
+            if (Vector3.Distance(transform.position, GetComponent<NavMeshAgent>().destination) > 10)
+            {
+                GetComponent<NavMeshAgent>().speed = startSpeed * 2;
+            }
+            else
+            {
+                GetComponent<NavMeshAgent>().speed = startSpeed;
+            }
+
             GetComponent<NavMeshAgent>().destination = FindObjectOfType<FirstPersonCharacterController>().gameObject.transform.position;
             GetComponent<NavMeshAgent>().updateRotation = false;
             if (blackout.IsOnBlack())
@@ -59,6 +70,7 @@ public class Monster_TV : MonoBehaviour
         else
         {
             screenStaticUI.alpha = 0f;
+            blackout.StopFlashing();
         }
 
         switch (stepNum)
@@ -133,8 +145,9 @@ public class Monster_TV : MonoBehaviour
 
     IEnumerator StartAttack()
     {
-        yield return new WaitForSeconds(2);
-        AudioManager.PlaySound(attackMusic, true);
+        yield return new WaitForSeconds(0);
+        //AudioManager.PlaySound(attackMusic, true);
+        GetComponent<AudioSource>().Play();
         stepNum = 6;
     }
 

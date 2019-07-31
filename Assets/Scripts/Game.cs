@@ -21,6 +21,7 @@ public class Game : MonoBehaviour
 
     public GameObject Instance;
 
+
     private void Start()
     {
         Instance = this.gameObject;
