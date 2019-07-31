@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Interactive : MonoBehaviour, IInteractable
 {
     public enum Verbs
@@ -57,6 +58,7 @@ public class Interactive : MonoBehaviour, IInteractable
         {
             case Verbs.GET:
                 GetItem();
+                Game.QuickSave();
                 break;
         }
     }

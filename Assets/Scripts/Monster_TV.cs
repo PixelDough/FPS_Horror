@@ -16,6 +16,10 @@ public class Monster_TV : MonoBehaviour
 
     public FlashBlack blackout;
 
+    public Transform screenTransform;
+
+    public CanvasGroup screenStaticUI;
+
     private int stepNum = 0;
     private AudioSource shockSource;
     private Vector3 startPos;
@@ -46,10 +50,15 @@ public class Monster_TV : MonoBehaviour
             {
                 GetComponent<NavMeshAgent>().updatePosition = false;
                 InstantlyTurn(GetComponent<NavMeshAgent>().destination);
+                screenStaticUI.alpha = 0.01f + Mathf.Max(0, (0.2f - Vector3.Distance(transform.position, GetComponent<NavMeshAgent>().destination)/20));
 
             }
             //GetComponent<NavMeshAgent>().speed = 3f;
             //lights.SetActive(true);
+        }
+        else
+        {
+            screenStaticUI.alpha = 0f;
         }
 
         switch (stepNum)
@@ -96,7 +105,10 @@ public class Monster_TV : MonoBehaviour
                 break;
             case 6:
                 alive = true;
-                
+                stepNum = 7;
+                break;
+            case 7:
+
                 break;
         }
     }

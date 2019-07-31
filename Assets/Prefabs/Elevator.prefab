@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerVolume: {fileID: 8372708982850430390}
+  isPowered: 0
 --- !u!65 &1755571489416292328
 BoxCollider:
   m_ObjectHideFlags: 0

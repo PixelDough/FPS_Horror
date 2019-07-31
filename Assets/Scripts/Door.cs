@@ -96,4 +96,15 @@ public class Door : Interactive
             m_IsOpen = !m_IsOpen;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Entered");
+        if (other.gameObject.GetComponent<Monster_TV>())
+        {
+            if (isLocked && item == Items.NONE) { return; }
+
+            m_IsOpen = true;
+        }
+    }
 }

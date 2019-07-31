@@ -1182,6 +1182,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 1819195291160501629, guid: 2e8302e8cb1c5964cbee4d6a9592ad60,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8899373833612696752, guid: 2e8302e8cb1c5964cbee4d6a9592ad60,
         type: 3}
       propertyPath: m_textInfo.characterCount

@@ -5,10 +5,13 @@ using UnityEngine;
 public class Elevator : MonoBehaviour
 {
     public TriggerVolume triggerVolume;
+    public bool isPowered = false;
 
     bool isGoingUp = false;
     float speed = 0f;
     float speedMax = 0.05f;
+
+    bool hasStarted = false;
 
     FirstPersonCharacterController rider;
 
@@ -22,9 +25,10 @@ public class Elevator : MonoBehaviour
     void FixedUpdate()
     {
         //isGoingUp = false;
-        if (triggerVolume.isTriggered)
+        if (triggerVolume.isTriggered && !hasStarted && isPowered)
         {
-            isGoingUp = true;
+            hasStarted = true;
+            StartCoroutine(StartGoingUp());
         }
 
         
@@ -37,6 +41,14 @@ public class Elevator : MonoBehaviour
             speed = Mathf.Min(speed + 0.001f, speedMax);
         }
         
+    }
+
+
+    IEnumerator StartGoingUp()
+    {
+        yield return new WaitForSeconds(2.0f);
+        isGoingUp = true;
+        FindObjectOfType<Monster_TV>().alive = false;
     }
     
 }

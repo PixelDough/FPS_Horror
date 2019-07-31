@@ -7,4 +7,6 @@ public class GameManager : Singleton<GameManager>
     
     public float lookSensitivity = 50;
 
+    public bool isNewGame = false;
+
 }

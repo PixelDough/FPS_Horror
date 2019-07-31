@@ -5,13 +5,13 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -8945691123924629249
-    second: Armature|Idle
+    second: Idle
   - first:
       74: -7172462676429691189
-    second: Armature|Slump
+    second: Slump
   - first:
       74: 8349542763059015795
-    second: Armature|Walk
+    second: Walk
   - first:
       74: -6544428077046268240
     second: Armature|Walk.001
@@ -25,7 +25,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.001
-    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    second: {fileID: 2100000, guid: 59981247a3cb3a54784e0fb878d027ec, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -54,7 +54,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Slump
+      name: Slump
       takeName: Armature|Slump
       internalID: -7172462676429691189
       firstFrame: 0
@@ -83,7 +83,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Walk
+      name: Walk
       takeName: Armature|Walk
       internalID: 8349542763059015795
       firstFrame: 0
@@ -112,9 +112,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Idle
+      name: Idle
       takeName: Armature|Idle
-      internalID: 0
+      internalID: -8945691123924629249
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0

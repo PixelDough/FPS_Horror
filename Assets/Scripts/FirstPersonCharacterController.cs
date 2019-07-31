@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class FirstPersonCharacterController : MonoBehaviour
 {
@@ -23,7 +24,10 @@ public class FirstPersonCharacterController : MonoBehaviour
     public AudioClip flashlightSoundOff;
 
     public List<Interactive.Items> items;
-    
+
+    public CanvasGroup gameOverCanvas;
+
+    bool m_isAlive = true;
 
     float moveFB;
     float moveLR;
@@ -148,21 +152,50 @@ public class FirstPersonCharacterController : MonoBehaviour
         rotY -= Input.GetAxis("Mouse Y") * GameManager.Instance.lookSensitivity * Time.deltaTime;
         rotY = Mathf.Clamp(rotY, -80f, 80f);
 
-        if (!target)
-        {
-            headJoint.transform.Rotate(0, rotX, 0);
 
-            cam.transform.localRotation = Quaternion.Lerp(cam.transform.localRotation, Quaternion.Euler(rotY, 0, 0), 0.5f);
+        if (target)
+        {
+            Transform currentHead = headJoint.transform;
+            currentHead.LookAt(target);
+
+            headJoint.transform.rotation = Quaternion.Lerp(headJoint.transform.rotation, currentHead.transform.rotation, 0.001f);
+            //cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, currentHead.transform.rotation, 0.001f);
+
+            cam.transform.LookAt(target);
         }
         else
         {
-            headJoint.transform.LookAt(target);
-            cam.transform.LookAt(target);
+            cam.transform.localRotation = Quaternion.Lerp(cam.transform.localRotation, Quaternion.Euler(rotY, 0, 0), 0.5f);
+            headJoint.transform.Rotate(0, rotX, 0);
         }
+
+        
+
+        
+        
 
         flashlight.transform.rotation = Quaternion.Lerp(flashlight.transform.rotation, cam.transform.rotation, 0.1f);
 
         #endregion
+
+        Monster_TV monster = FindObjectOfType<Monster_TV>();
+
+        if (monster)
+        {
+            if (monster.alive && monster.blackout.IsOnBlack() && Vector3.Distance(transform.position, monster.transform.position) < 2)
+            {
+                m_isAlive = false;
+                gameOverCanvas.alpha = 1;
+            }
+        }
+
+        if (!m_isAlive)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
 
         interactButton = false;
     }
@@ -208,7 +241,15 @@ public class FirstPersonCharacterController : MonoBehaviour
         #endregion
 
 
-        //target = null;
+        target = null;
+        Monster_TV monster = FindObjectOfType<Monster_TV>();
+        if (monster)
+        {
+            if (monster.alive)
+            {
+                target = monster.screenTransform;
+            }
+        }
         //Collider[] overlap = Physics.OverlapSphere(transform.position, 5f);
         //foreach (Collider c in overlap)
         //{

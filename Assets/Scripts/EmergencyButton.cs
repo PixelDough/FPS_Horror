@@ -9,6 +9,7 @@ public class EmergencyButton : Interactive
 
     public PowerSwitch powerSwitch;
     public AudioClip errorSound;
+    public Elevator elevator;
 
     private Animator animator;
 
@@ -42,7 +43,10 @@ public class EmergencyButton : Interactive
             animator.Play("ButtonPress", 0, 0f);
             if (powerSwitch.isOn)
             {
+                Game.QuickSave();
+                Game.canSave = false;
                 hasBeenPressed = true;
+                elevator.isPowered = true;
             }
             else
             {

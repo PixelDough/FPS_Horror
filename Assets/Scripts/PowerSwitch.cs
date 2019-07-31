@@ -8,6 +8,8 @@ public class PowerSwitch : Interactive
     public bool isOn = false;
     public GameObject lights;
 
+    public string switchSaveName = "Switch";
+
     private Vector3 m_InitialLeverRotation;
 
     public void Awake()
